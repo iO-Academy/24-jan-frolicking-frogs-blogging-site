@@ -15,8 +15,18 @@ $postModel = new PostModel($db);
 
 $posts = $postModel->getAllPosts();
 
-echo '<pre>';
-var_dump($posts);
+$displayPosts = $postModel->displayAllPosts();
+
+foreach ($displayPosts as $post) {
+    echo '<ul>';
+    echo "<li>{$post['title']}</li>";
+    echo mb_strimwidth("<li>{$post['content']}</li>", 0, 100, "...");
+    echo '</ul>';
+    echo '<br>';
+}
+//echo '<pre>';
+//var_dump($posts);
+
 
 ?>
 
@@ -72,7 +82,7 @@ var_dump($posts);
         <span class="px-3 py-2 bg bg-slate-200 inline-block mb-4 rounded-sm">Science and Nature</span>
 
         <div class="flex justify-between items-center flex-col md:flex-row mb-4">
-            <h2 class="text-4xl">Example title</h2>
+            <h2 class="text-4xl"><?php echo $post['title'] ?></h2>
             <span class="text-xl">100 likes - 50 dislikes</span>
         </div>
         <p class="text-2xl mb-2">01/01/2024 - By Bob</p>

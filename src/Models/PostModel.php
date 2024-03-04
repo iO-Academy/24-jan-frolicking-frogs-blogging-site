@@ -44,4 +44,17 @@ class PostModel {
         return new Post($data['title'], $data['author-name'], $data['content'], $data['date-time']);
     }
 
+    public function displayAllPosts()
+    {
+        $query = $this->db->prepare('SELECT `id`,`title`, `content`,`author-name`, `date-time`, `user-id` 
+        FROM `posts` ORDER BY `date-time` DESC');
+        $query->execute();
+        $data = $query->fetchAll();
+
+        return $data;
+    }
+
+
+
+
 }
