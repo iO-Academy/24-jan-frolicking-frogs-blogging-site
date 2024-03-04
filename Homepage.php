@@ -1,3 +1,25 @@
+<?php
+
+require_once 'src/Models/PostModel.php';
+
+function connectToDB() :PDO
+{
+
+    $db = new PDO('mysql:host=127.0.0.1; dbname=blog', 'root', 'password');
+    $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    return $db;
+
+}
+$db = connectToDB();
+$postModel = new PostModel($db);
+
+$posts = $postModel->getAllPosts();
+
+echo '<pre>';
+var_dump($posts);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,3 +99,8 @@
 </section>
 </body>
 </html>
+
+
+
+
+
