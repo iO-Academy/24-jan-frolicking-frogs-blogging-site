@@ -12,8 +12,8 @@ class PostModel {
 
     public function getAllPosts()
     {
-        $query = $this->db->prepare('SELECT `title`, `authorname`,`content`, `date`, `time` 
-        FROM `posts` ORDER BY `date` DESC LIMIT `content` 100');
+        $query = $this->db->prepare('SELECT `id`,`title`, `content`,`author-name`, `date-time`, `user-id` 
+        FROM `posts` ORDER BY `date-time` DESC LIMIT `content` 100');
         $query->execute();
         $data = $query->fetchAll();
 
@@ -22,7 +22,7 @@ class PostModel {
 
     public function getPostById(int $id): Post
     {
-        $query = $this->db->prepare('SELECT `title`, `authorname`,`content`, `date`, `time` 
+        $query = $this->db->prepare('SELECT `id`,`title`, `content`,`author-name`, `date-time`, `user-id` 
         FROM `posts` WHERE `id` = :id');
         $query->execute([
             ':id' => $id
@@ -37,14 +37,14 @@ class PostModel {
     {
         $posts = [];
         foreach ($data as $post) {
-            $posts[] = new Post($post['title'], $post['authorname'], $post['content'], $post['date']);
+            $posts[] = new Post($post['title'], $post['author-name'], $post['content'], $post['date-time']);
         }
         return $posts;
     }
 
     private function hydrateSinglePost(array $data): Post
     {
-        return new Post($data['title'], $data['authorname'], $data['content'], $data['date']);
+        return new Post($data['title'], $data['author-name'], $data['content'], $data['date-time']);
     }
 
 }
