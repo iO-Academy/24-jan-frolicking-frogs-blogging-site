@@ -13,7 +13,7 @@ class PostModel {
     public function getAllPosts()
     {
         $query = $this->db->prepare('SELECT `id`,`title`, `content`,`author-name`, `date-time`, `user-id` 
-        FROM `posts` ORDER BY `date-time` DESC LIMIT `content` 100');
+        FROM `posts` ORDER BY `date-time` DESC');
         $query->execute();
         $data = $query->fetchAll();
 
