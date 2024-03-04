@@ -24,12 +24,9 @@ class PostModel {
     {
         $query = $this->db->prepare('SELECT `id`,`title`, `content`,`author-name`, `date-time`, `user-id` 
         FROM `posts` WHERE `id` = :id');
-        $query->execute([
-            ':id' => $id
-        ]);
+        $query->execute([':id' => $id]);
         $data = $query->fetch();
-        // We are converting the assoc array PDO gives us into our entity object
-        // by passing data from the array ($data) into a new Adult object
+
         return $this->hydrateSinglePost($data);
     }
 
