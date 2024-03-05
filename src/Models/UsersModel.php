@@ -17,27 +17,29 @@ class UsersModel
     public function getAllUsers()
     {
 
-        $query = $this->db->prepare('SELECT * FROM `users`;');
+        $query = $this->db->prepare('SELECT `id`, `user-name`, `email-address`, `password` FROM `users`;');
         $query->execute();
         $data = $query->fetchAll();
 
         return $this->hydrateMultipleUsers($data);
     }
 
-    public function selectUser(string $inputtedUsername): User
+    public function selectUser(string $inputtedUsername): User|null
     {
-
-        $query = $this->db->prepare('SELECT * FROM `users` WHERE `user-name` = :inputtedUsername');
+        $query = $this->db->prepare('SELECT `id`, `user-name`, `email-address`, `password` FROM `users` WHERE `user-name` = :inputtedUsername');
         $query->execute([
             ':inputtedUsername' => $inputtedUsername
         ]);
 
         $data = $query->fetch();
 
+        if ($data === false) {
+            return null;
+        }
+
         return $this->hydrateSingleUser($data);
 
     }
-
 
     private function hydrateSingleUser(array $data): User {
         return new User($data['id'], $data['user-name'], $data['password'], $data['email-address']);
