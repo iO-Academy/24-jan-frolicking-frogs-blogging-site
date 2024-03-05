@@ -46,7 +46,6 @@ class PostModel {
 
     public function displayAllPosts() :void
     {
-
         foreach ($this->getAllPosts() as $post) {
             echo "<article class='p-8 border border-solid rounded-md'>
                 <span class='px-3 py-2 bg bg-slate-200 inline-block mb-4 rounded-sm'>Science and Nature</span>

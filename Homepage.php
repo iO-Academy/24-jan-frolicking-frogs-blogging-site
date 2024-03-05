@@ -1,11 +1,10 @@
 <?php
 
-require_once 'src/Models/PostModel.php';
 require_once 'connectToDB.php';
+require_once 'src/Models/PostModel.php';
 
 $db = connectToDB();
 $postModel = new PostModel($db);
-
 
 ?>
 

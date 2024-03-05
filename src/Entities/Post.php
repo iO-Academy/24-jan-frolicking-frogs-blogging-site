@@ -14,7 +14,6 @@ readonly class Post {
         $this->content = $content;
         $this->dateTime = $dateTime;
     }
-
 }
 
 ?>
