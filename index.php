@@ -28,7 +28,7 @@ $postsViewHelper = new \src\PostsViewHelper();
         </div>'; } ?>
 </nav>
 <section class="container lg:w-1/2 mx-auto flex flex-col gap-5">
-    <?php $postsViewHelper->displayAllPosts($posts); ?>
+    <?php echo $postsViewHelper->displayAllPosts($posts); ?>
 </section>
 </body>
 </html>
