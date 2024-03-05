@@ -1,22 +1,10 @@
 <?php
 
 require_once 'src/Models/PostModel.php';
+require_once 'connectToDB.php';
 
-function connectToDB() :PDO
-{
-
-    $db = new PDO('mysql:host=127.0.0.1; dbname=blog', 'root', 'password');
-    $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-    return $db;
-
-}
 $db = connectToDB();
 $postModel = new PostModel($db);
-
-$posts = $postModel->getAllPosts();
-
-echo '<pre>';
-var_dump($posts);
 
 ?>
 
@@ -68,37 +56,13 @@ var_dump($posts);
 </form>
 
 <section class="container lg:w-1/2 mx-auto flex flex-col gap-5">
-    <article class="p-8 border border-solid rounded-md">
-        <span class="px-3 py-2 bg bg-slate-200 inline-block mb-4 rounded-sm">Science and Nature</span>
 
-        <div class="flex justify-between items-center flex-col md:flex-row mb-4">
-            <h2 class="text-4xl">Example title</h2>
-            <span class="text-xl">100 likes - 50 dislikes</span>
-        </div>
-        <p class="text-2xl mb-2">01/01/2024 - By Bob</p>
-        <p>Lorem ipsum dolor sit amet, consectetur efficitur, Lorem ipsum dolor sit amet, consectetur efficitur...</p>
-        <div class="flex justify-center">
-            <a class="px-3 py-2 mt-4 text-lg bg-indigo-400 hover:bg-indigo-700 hover:text-white transition inline-block rounded-sm" href="singlePost.php">View post</a>
-        </div>
-    </article>
+    <?php $postModel->displayAllPosts(); ?>
 
-    <article class="p-8 border border-solid rounded-md">
-        <span class="px-3 py-2 bg bg-rose-600 inline-block mb-4 rounded-sm">Controversial</span>
-        <span class="px-3 py-2 bg bg-slate-200 inline-block mb-4 rounded-sm">Gaming</span>
-
-        <div class="flex justify-between items-center flex-col md:flex-row mb-4">
-            <h2 class="text-4xl">Example title</h2>
-            <span class="text-xl">50 likes - 100 dislikes</span>
-        </div>
-        <p class="text-2xl mb-2">01/01/2024 - By Bob</p>
-        <p>Lorem ipsum dolor sit amet, consectetur efficitur, Lorem ipsum dolor sit amet, consectetur efficitur...</p>
-        <div class="flex justify-center">
-            <a class="px-3 py-2 mt-4 text-lg bg-indigo-400 hover:bg-indigo-700 hover:text-white transition inline-block rounded-sm" href="singlePost.php">View post</a>
-        </div>
-    </article>
 </section>
 </body>
 </html>
+
 
 
 

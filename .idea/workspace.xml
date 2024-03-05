@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e77723b-3434-487d-af53-3713d1f6296a" name="Changes" comment="" />
+    <list default="true" id="2e77723b-3434-487d-af53-3713d1f6296a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage.php" beforeDir="false" afterPath="$PROJECT_DIR$/Homepage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entities/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/PostModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/PostModel.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,28 +25,28 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/usr/local/Cellar/php@8.2/8.2.13/bin/php" />
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2dE4UVt4OQpxaNFVZ23bjEXfIur" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "S1T3",
-    "last_opened_file_path": "/Users/ioacademy/sites/academyServer/html/24-jan-frolicking-frogs-blogging-site",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;S1T3&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/ioacademy/sites/academyServer/html/24-jan-frolicking-frogs-blogging-site&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -58,6 +63,9 @@
       <option name="presentableId" value="Default" />
       <updated>1709559919886</updated>
       <workItem from="1709559921239" duration="5983000" />
+      <workItem from="1709566742127" duration="5265000" />
+      <workItem from="1709572745929" duration="6813000" />
+      <workItem from="1709629171636" duration="149000" />
     </task>
     <servers />
   </component>
