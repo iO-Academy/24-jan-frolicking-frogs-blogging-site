@@ -5,14 +5,18 @@ readonly class Post {
     public string $title;
     public string $authorName;
     public string $content;
-    public string $date;
+    public string $dateTime;
 
-    public function __construct(string $title, string $authorName, string $content, string $date)
+    public function __construct(string $title, string $authorName, string $content, string $dateTime)
     {
         $this->title = $title;
         $this->authorName = $authorName;
         $this->content = $content;
-        $this->date = $date;
+        $this->dateTime = $dateTime;
     }
 
 }
+
+?>
+
+
