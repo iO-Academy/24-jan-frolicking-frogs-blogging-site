@@ -24,7 +24,7 @@ function verifyLogin()
             $storedUsername = $users->username;
 
             if ((password_verify($storedPassword, $hashedPassword)) && ($inputtedUsername === $storedUsername)) {
-                header('Location: Homepage.php');
+                header('Location: index.php');
                 session_start();
                 $_SESSION['userid'] = $users->id;
                 $_SESSION['username'] = $users->username;
