@@ -23,6 +23,7 @@ if (isset($_POST['username'])) {
 
     } else {
         $usersModel->addUser($inputtedUsername, $inputtedEmail, $inputtedPassword);
+        $users = $usersModel->selectUser($inputtedUsername);
         header('Location: index.php');
         session_start();
         $_SESSION['userid'] = $users->id;

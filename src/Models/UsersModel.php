@@ -41,7 +41,7 @@ class UsersModel
 
     }
 
-    public function addUser($inputtedUsername, $inputtedEmail, $inputtedPassword)
+    public function addUser(string $inputtedUsername, EmailAddress $inputtedEmail, string $inputtedPassword)
     {
 
         $query = $this->db->prepare("INSERT INTO `users` (`user-name`, `email-address`, `password`) VALUES (:username, :emailAddress, :password);");
