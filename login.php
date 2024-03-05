@@ -4,7 +4,7 @@ require_once 'connectToDB.php';
 require_once 'src/Models/UsersModel.php';
 
 session_start();
-function verifyLogin()
+function verifyLogin(): void
 {
     if (isset($_POST['username'])) {
 

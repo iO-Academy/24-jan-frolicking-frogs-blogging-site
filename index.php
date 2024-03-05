@@ -22,7 +22,6 @@ $postsViewHelper = new \src\PostsViewHelper();
 <nav class="flex justify-between items-center py-5 px-4 mb-10 border-b border-solid">
     <a href="index.php"><h1 class="text-5xl">Blog</h1></a>
     <?php if (!isset($_SESSION['userid'])){
-
         echo '<div class="flex gap-5">
         <a href="login.php">Login</a>
         </div>'; } ?>
