@@ -27,7 +27,7 @@ class UsersModel
     public function selectUser(string $inputtedUsername): User
     {
 
-        $query = $this->db->prepare('SELECT * FROM `users` WHERE `username` = :inputtedUsername');
+        $query = $this->db->prepare('SELECT * FROM `users` WHERE `user-name` = :inputtedUsername');
         $query->execute([
             ':inputtedUsername' => $inputtedUsername
         ]);
@@ -40,14 +40,14 @@ class UsersModel
 
 
     private function hydrateSingleUser(array $data): User {
-        return new User($data['id'], $data['username'], $data['password'], $data['email-address']);
+        return new User($data['id'], $data['user-name'], $data['password'], $data['email-address']);
     }
 
     private function hydrateMultipleUsers(array $data): array
     {
         $users = [];
         foreach ($data as $user) {
-            $users[] = new User($user['id'], $user['username'], $user['password'], $user['email-address']);
+            $users[] = new User($user['id'], $user['user-name'], $user['password'], $user['email-address']);
         }
         return $users;
     }
