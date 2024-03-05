@@ -2,14 +2,16 @@
 
 require_once 'connectToDB.php';
 require_once 'src/Models/UsersModel.php';
+require_once 'emailAddress.php';
+require_once 'password.php';
 
 session_start();
 
 if (isset($_POST['username'])) {
 
     $inputtedUsername = $_POST['username'];
-    $inputtedEmail = $_POST['email'];
-    $inputtedPassword = $_POST['password'];
+    $inputtedEmail = new EmailAddress($_POST['email']);
+    $inputtedPassword = new Password($_POST['password']);
 
     $db = connectToDb();
 
