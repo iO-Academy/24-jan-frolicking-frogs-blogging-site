@@ -6,7 +6,7 @@ require_once 'src/Models/PostModel.php';
 
 class PostsViewHelper
 {
-
+    public string $posts;
     public function displayAllPosts(array $posts) :void
     {
         foreach ($posts as $post) {
@@ -20,4 +20,8 @@ class PostsViewHelper
         }
     }
 
+    public function __toString(): string
+    {
+        return $this->posts;
+    }
 }
