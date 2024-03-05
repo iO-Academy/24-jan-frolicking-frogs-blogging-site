@@ -24,6 +24,10 @@ if (isset($_POST['username'])) {
 
     } else {
         $usersModel->addUser($inputtedUsername, $inputtedEmail, $inputtedPassword);
+        header('Location: index.php');
+        session_start();
+        $_SESSION['userid'] = $users->id;
+        $_SESSION['username'] = $users->username;
     }
 }
 
@@ -43,7 +47,11 @@ if (isset($_POST['username'])) {
     <div class="flex gap-5">
         <a href="addPost.php">Create Post</a>
         <a href="login.php">Login</a>
-        <a href="register.php">Register</a>
+        <?php if (!isset($_SESSION['userid'])){
+
+            echo '<div class="flex gap-5">
+        <a href="register.php">register</a>
+        </div>'; } ?>
     </div>
 </nav>
 
