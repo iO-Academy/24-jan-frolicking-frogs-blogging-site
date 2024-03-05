@@ -5,7 +5,6 @@ require_once 'src/Models/UsersModel.php';
 
 session_start();
 
-
 if (isset($_POST['username'])) {
 
     $inputtedUsername = $_POST['username'];
