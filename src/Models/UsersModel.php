@@ -4,6 +4,7 @@
 require_once 'src/Entities/User.php';
 
 
+
 class UsersModel
 {
 
@@ -69,7 +70,7 @@ class UsersModel
 
 
     private function hydrateSingleUser(array $data): User {
-        return new User($data['id'], $data['user-name'], $data['password'], $data['email-address']);
+        return new User($data['id'], $data['user-name'], new Password($data['password']), new EmailAddress($data['email-address']));
     }
 
     private function hydrateMultipleUsers(array $data): array
