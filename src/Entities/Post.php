@@ -16,6 +16,5 @@ readonly class Post {
     }
 }
 
-?>
 
 
