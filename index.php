@@ -22,7 +22,7 @@ $postsViewHelper = new \src\PostsViewHelper();
     <a href="index.php"><h1 class="text-5xl">Blog</h1></a>
 </nav>
 <section class="container lg:w-1/2 mx-auto flex flex-col gap-5">
-    <?php $postsViewHelper->displayAllPosts($posts); ?>
+    <?php echo $postsViewHelper->displayAllPosts($posts); ?>
 </section>
 </body>
 </html>
