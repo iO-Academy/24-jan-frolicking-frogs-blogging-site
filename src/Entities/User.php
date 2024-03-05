@@ -5,11 +5,11 @@ readonly class User {
     public int $id;
     public string $username;
 
-    public Password $password;
+    public string $password;
 
-    public EmailAddress $emailAddress;
+    public string $emailAddress;
 
-    public function __construct(int $id, string $username, Password $password, EmailAddress $emailAddress)
+    public function __construct(int $id, string $username, string $password, string $emailAddress)
     {
         $this->id = $id;
         $this->username = $username;

@@ -1,9 +1,6 @@
 <?php
 
-
 require_once 'src/Entities/User.php';
-
-
 
 class UsersModel
 {
@@ -44,14 +41,12 @@ class UsersModel
 
     public function addUser(string $inputtedUsername, EmailAddress $inputtedEmail, Password $inputtedPassword)
     {
-
         $query = $this->db->prepare("INSERT INTO `users` (`user-name`, `email-address`, `password`) VALUES (:username, :emailAddress, :password);");
         $query->execute([
             ':username' => $inputtedUsername,
             ':emailAddress' => $inputtedEmail,
             ':password' => $inputtedPassword,
         ]);
-
     }
 
     public function checkUser(string $inputtedUsername)
@@ -70,7 +65,7 @@ class UsersModel
 
 
     private function hydrateSingleUser(array $data): User {
-        return new User($data['id'], $data['user-name'], new Password($data['password']), new EmailAddress($data['email-address']));
+        return new User($data['id'], $data['user-name'], $data['password'], $data['email-address']);
     }
 
     private function hydrateMultipleUsers(array $data): array

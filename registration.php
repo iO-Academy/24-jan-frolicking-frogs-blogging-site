@@ -5,6 +5,8 @@ require_once 'src/Models/UsersModel.php';
 require_once 'emailAddress.php';
 require_once 'password.php';
 
+session_start();
+
 if (isset($_POST['username'])) {
 
     $inputtedUsername = $_POST['username'];
@@ -18,22 +20,19 @@ if (isset($_POST['username'])) {
     $user = $usersModel->checkUser($inputtedUsername);
 
     if (!empty($user)) {
-
         echo 'This username is taken';
 
+    } else if ($inputtedPassword == '') {
+        echo '';
     } else {
+        header('Location: index.php');
         $usersModel->addUser($inputtedUsername, $inputtedEmail, $inputtedPassword);
         $users = $usersModel->selectUser($inputtedUsername);
-        header('Location: index.php');
-        session_start();
         $_SESSION['userid'] = $users->id;
         $_SESSION['username'] = $users->username;
     }
 }
-
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,13 +44,7 @@ if (isset($_POST['username'])) {
 <nav class="flex justify-between items-center py-5 px-4 mb-10 border-b border-solid">
     <a href="index.php"><h1 class="text-5xl">Blog</h1></a>
     <div class="flex gap-5">
-        <a href="addPost.php">Create Post</a>
         <a href="login.php">Login</a>
-        <?php if (isset($_SESSION['userid'])){
-
-            echo '<div class="flex gap-5">
-        <a href="register.php">register</a>
-        </div>'; } ?>
     </div>
 </nav>
 
