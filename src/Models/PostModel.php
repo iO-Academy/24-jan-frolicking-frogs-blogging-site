@@ -35,8 +35,6 @@ class PostModel {
         $posts = [];
         foreach ($data as $post) {
             $posts[] = new Post($post['title'], $post['author-name'], $post['content'], $post['date-time']);
-            $posts = ['title' => $post['title'], 'author-name' => $post['author-name'],
-                    'content' => $post['content'], 'date-time' => $post['date-time']];
         }
         return $posts;
     }

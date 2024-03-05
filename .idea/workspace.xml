@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="2e77723b-3434-487d-af53-3713d1f6296a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Homepage.php" beforeDir="false" afterPath="$PROJECT_DIR$/Homepage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entities/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/Post.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Models/PostModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/PostModel.php" afterDir="false" />
+=======
+    <list default="true" id="ba3ce832-9a6b-418d-8a6e-8951c0f124f9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> 5a62b18b634d5ef977dc74ce6fec18a368019860
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,9 +31,15 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/usr/local/Cellar/php@8.2/8.2.13/bin/php" />
   <component name="ProjectColorInfo">{
+<<<<<<< HEAD
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="2dE4UVt4OQpxaNFVZ23bjEXfIur" />
+=======
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2dE3hSBNllK4Gb9kgfDvrezSdoy" />
+>>>>>>> 5a62b18b634d5ef977dc74ce6fec18a368019860
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -57,15 +68,21 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2e77723b-3434-487d-af53-3713d1f6296a" name="Changes" comment="" />
-      <created>1709559919886</created>
+      <changelist id="ba3ce832-9a6b-418d-8a6e-8951c0f124f9" name="Changes" comment="" />
+      <created>1709559531415</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
       <updated>1709559919886</updated>
       <workItem from="1709559921239" duration="5983000" />
       <workItem from="1709566742127" duration="5265000" />
       <workItem from="1709572745929" duration="6813000" />
       <workItem from="1709629171636" duration="149000" />
+=======
+      <updated>1709559531415</updated>
+      <workItem from="1709559535517" duration="6197000" />
+      <workItem from="1709575466489" duration="242000" />
+>>>>>>> 5a62b18b634d5ef977dc74ce6fec18a368019860
     </task>
     <servers />
   </component>

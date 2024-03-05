@@ -6,6 +6,7 @@ require_once 'connectToDB.php';
 $db = connectToDB();
 $postModel = new PostModel($db);
 
+
 ?>
 
 <!DOCTYPE html>
