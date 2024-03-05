@@ -4,39 +4,11 @@ require_once 'connectToDB.php';
 require_once 'src/Models/UsersModel.php';
 
 session_start();
-function verifyLogin()
-{
-    if (isset($_POST['username'])) {
 
-        $inputtedUsername = $_POST['username'];
-        $inputtedPassword = $_POST['password'];
 
-        $hashedPassword = password_hash($inputtedPassword, PASSWORD_BCRYPT);
-
-        $db = connectToDB();
-        $usersModel = new UsersModel($db);
-
-        $users = $usersModel->selectUser($inputtedUsername);
-        if ($users === null) {
-            echo 'User does not exist';
-        } else {
-            $storedPassword = $users->password;
-            $storedUsername = $users->username;
-
-            if ((password_verify($storedPassword, $hashedPassword)) && ($inputtedUsername === $storedUsername)) {
-                header('Location: index.php');
-                session_start();
-                $_SESSION['userid'] = $users->id;
-                $_SESSION['username'] = $users->username;
-            } else {
-                echo 'Sorry, your username or password is incorrect';
-            }
-        }
-    }
-}
+verifyLogin();
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,7 +38,7 @@ function verifyLogin()
     <input class="px-3 py-2 mt-4 text-lg bg-indigo-400 hover:bg-indigo-700 hover:text-white transition inline-block rounded-sm" type="submit" value="Login" />
 </form>
 
-<div class="text-center"><?php verifyLogin(); ?></div>
+<div class="text-center"></div>
 
 </body>
 </html>
