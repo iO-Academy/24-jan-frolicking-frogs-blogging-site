@@ -3,9 +3,10 @@
 require_once 'src/Models/PostModel.php';
 require_once 'connectToDB.php';
 
+session_start();
+
 $db = connectToDB();
 $postModel = new PostModel($db);
-
 
 ?>
 
@@ -19,11 +20,11 @@ $postModel = new PostModel($db);
 <body class="selection:bg-teal-200">
 <nav class="flex justify-between items-center py-5 px-4 mb-10 border-b border-solid">
     <a href="index.php"><h1 class="text-5xl">Blog</h1></a>
-    <div class="flex gap-5">
-        <a href="addPost.php">Create post</a>
+    <?php if (!isset($_SESSION['userid'])){
+
+    echo '<div class="flex gap-5">
         <a href="login.php">Login</a>
-        <a href="register.php">Register</a>
-    </div>
+        </div>'; } ?>
 </nav>
 
 <form class="container lg:w-1/2 gap-5 mx-auto mb-10 flex justify-between items-center flex-col lg:flex-row px-5 sm:px-0">
