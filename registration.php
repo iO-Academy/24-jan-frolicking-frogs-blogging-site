@@ -46,7 +46,7 @@ if (isset($_POST['username'])) {
     <div class="flex gap-5">
         <a href="addPost.php">Create Post</a>
         <a href="login.php">Login</a>
-        <?php if (!isset($_SESSION['userid'])){
+        <?php if (isset($_SESSION['userid'])){
 
             echo '<div class="flex gap-5">
         <a href="register.php">register</a>
