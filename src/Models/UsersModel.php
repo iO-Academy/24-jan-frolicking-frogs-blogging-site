@@ -41,6 +41,33 @@ class UsersModel
 
     }
 
+    public function addUser($inputtedUsername, $inputtedEmail, $inputtedPassword)
+    {
+
+        $query = $this->db->prepare("INSERT INTO `users` (`user-name`, `email-address`, `password`) VALUES (:username, :emailAddress, :password);");
+        $query->execute([
+            ':username' => $inputtedUsername,
+            ':emailAddress' => $inputtedEmail,
+            ':password' => $inputtedPassword,
+        ]);
+
+    }
+
+    public function checkUser(string $inputtedUsername)
+    {
+
+        $query = $this->db->prepare('SELECT `id`, `user-name`, `email-address`, `password` FROM `users` WHERE `user-name` = :inputtedUsername');
+        $query->execute([
+            ':inputtedUsername' => $inputtedUsername
+        ]);
+
+        $data = $query->fetch();
+
+        return $data;
+
+    }
+
+
     private function hydrateSingleUser(array $data): User {
         return new User($data['id'], $data['user-name'], $data['password'], $data['email-address']);
     }

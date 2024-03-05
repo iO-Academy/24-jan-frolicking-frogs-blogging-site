@@ -4,16 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="2e77723b-3434-487d-af53-3713d1f6296a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Homepage.php" beforeDir="false" afterPath="$PROJECT_DIR$/Homepage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entities/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/PostModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/PostModel.php" afterDir="false" />
-=======
-    <list default="true" id="ba3ce832-9a6b-418d-8a6e-8951c0f124f9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
->>>>>>> 5a62b18b634d5ef977dc74ce6fec18a368019860
+    <list default="true" id="f613e056-e5dc-434d-bafb-f55d1ec64572" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/registration.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,35 +21,29 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/usr/local/Cellar/php@8.2/8.2.13/bin/php" />
   <component name="ProjectColorInfo">{
-<<<<<<< HEAD
+  &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 6
 }</component>
-  <component name="ProjectId" id="2dE4UVt4OQpxaNFVZ23bjEXfIur" />
-=======
-  &quot;associatedIndex&quot;: 2
-}</component>
-  <component name="ProjectId" id="2dE3hSBNllK4Gb9kgfDvrezSdoy" />
->>>>>>> 5a62b18b634d5ef977dc74ce6fec18a368019860
+  <component name="ProjectId" id="2dGmBbdTnQkzaLvtVEobvU7g17T" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;S1T3&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/ioacademy/sites/academyServer/html/24-jan-frolicking-frogs-blogging-site&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "S3T1",
+    "last_opened_file_path": "/Users/victoriamccusker/sites/academyServer/html/24-jan-frolicking-frogs-blogging-site",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -68,21 +54,13 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ba3ce832-9a6b-418d-8a6e-8951c0f124f9" name="Changes" comment="" />
-      <created>1709559531415</created>
+      <changelist id="f613e056-e5dc-434d-bafb-f55d1ec64572" name="Changes" comment="" />
+      <created>1709642655176</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-<<<<<<< HEAD
-      <updated>1709559919886</updated>
-      <workItem from="1709559921239" duration="5983000" />
-      <workItem from="1709566742127" duration="5265000" />
-      <workItem from="1709572745929" duration="6813000" />
-      <workItem from="1709629171636" duration="149000" />
-=======
-      <updated>1709559531415</updated>
-      <workItem from="1709559535517" duration="6197000" />
-      <workItem from="1709575466489" duration="242000" />
->>>>>>> 5a62b18b634d5ef977dc74ce6fec18a368019860
+      <updated>1709642655176</updated>
+      <workItem from="1709642656443" duration="917000" />
+      <workItem from="1709645807002" duration="1295000" />
     </task>
     <servers />
   </component>
