@@ -18,17 +18,14 @@ if (isset($_POST['submit']))
     $postsModel = new PostModel($db);
 
     $postsModel->addPost($inputtedTitle, $inputtedContent, $currentUserId);
-//    header('index.php');
 
-
-//        if(strlen($inputtedTitle) > 30) {
-//            echo 'Title should be less than 30 characters in length.';
-//        } elseif(strlen($inputtedContent) < 50 || strlen($inputtedContent) > 1000) {
-//            echo 'Content must have between 50 to 1000 characters';
-//        } else {
-//            echo 'Congratulations! Your post has been added to our blog! Thanks for contributing to our network!';
-////            $this->password = $password;
-//        }
+        if(strlen($inputtedTitle) > 30) {
+            echo 'Title should be less than 30 characters in length.';
+        } elseif(strlen($inputtedContent) < 50 || strlen($inputtedContent) > 1000) {
+            echo 'Content must have between 50 to 1000 characters';
+        } else {
+            echo 'Congratulations! Your post has been added to our blog! Thanks for contributing to our network!';
+        }
 
 //    $post = $postsModel->checkPost($inputtedTitle, $inputtedContent);
 //
