@@ -25,11 +25,11 @@ if (isset($_POST['username'])) {
     } else if ($inputtedPassword == '') {
         echo '';
     } else {
-        header('Location: index.php');
         $usersModel->addUser($inputtedUsername, $inputtedEmail, $inputtedPassword);
         $users = $usersModel->selectUser($inputtedEmail);
         $_SESSION['userid'] = $users->id;
         $_SESSION['username'] = $users->username;
+        header('Location: index.php');
     }
 }
 ?>
