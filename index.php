@@ -29,6 +29,7 @@ $postsViewHelper = new \src\PostsViewHelper();
         <a href="registration.php">Register</a>
         </div>'; } else {
         echo '<div class="flex gap-5">
+
         <a href="addPost.php">Create Post</a>
         </div>';
         echo '<div class="flex gap-5">
