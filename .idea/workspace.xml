@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <list default="true" id="f613e056-e5dc-434d-bafb-f55d1ec64572" name="Changes" comment="">
 <<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
@@ -22,6 +23,9 @@
 =======
     <list default="true" id="f613e056-e5dc-434d-bafb-f55d1ec64572" name="Changes" comment="" />
 >>>>>>> 8b9b9304316b87d2aeb60ca05af372b538198341
+=======
+    <list default="true" id="f613e056-e5dc-434d-bafb-f55d1ec64572" name="Changes" comment="" />
+>>>>>>> story4
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,6 +45,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/usr/local/Cellar/php@8.2/8.2.13/bin/php" />
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 6
@@ -56,6 +61,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "git-widget-placeholder": "S4T1",
 =======
     "git-widget-placeholder": "story2",
@@ -63,6 +69,9 @@
 =======
     "git-widget-placeholder": "fix",
 >>>>>>> c806a07202478bd4cb1da1ff16606ffa68e9002b
+=======
+    "git-widget-placeholder": "story3",
+>>>>>>> story4
     "last_opened_file_path": "/Users/victoriamccusker/sites/academyServer/html/24-jan-frolicking-frogs-blogging-site",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
