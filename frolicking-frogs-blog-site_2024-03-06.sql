@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 11.2.3-MariaDB-1:11.2.3+maria~ubu2204)
 # Database: frolicking-frogs-blog-site
-# Generation Time: 2024-03-04 14:29:44 +0000
+# Generation Time: 2024-03-06 11:49:06 +0000
 # ************************************************************
 
 
@@ -70,11 +70,26 @@ LOCK TABLES `users` WRITE;
 
 INSERT INTO `users` (`id`, `user-name`, `email-address`, `password`)
 VALUES
-	(1,'alex','alex@gmail.com','test1'),
+	(1,'alex','alex@gmail.com','$2y$10$1iaklqi1..Q70newcrXKoOn20dCyr/REN7PqcCxZgT9'),
 	(2,'victoria','victoria@gmail.com','test2'),
 	(3,'leon','leon@gmail.com','test3'),
 	(4,'Rosina','rosina@gmail.com','test4'),
-	(5,'Connor','connor@gmail.com','test5');
+	(5,'Connor','connor@gmail.com','test5'),
+	(6,'victoriamccusker','vrmm@hotmail.co.uk','fvabb'),
+	(7,'hellobob','fddfdf@flkgdn.com','fdfddffd'),
+	(8,'robertpezet','fddfdf@flkgdn.com','gsfettehte'),
+	(9,'dsv','email@email.com','dad'),
+	(10,'vdfb','email@email.com','dsvd'),
+	(11,'fdvbf','gail@gail.com','svdvsd'),
+	(12,'dfag','s2@gmail.com','dsgs'),
+	(13,'dsvd','email@email.com','dvsvds'),
+	(14,'fasv','rtt@gmail.com','sbesb'),
+	(15,'vdsva','wve@gmail.com','ebrbre'),
+	(16,'vads','grr@gmail.com','eet'),
+	(17,'vasdvd','fekjb@gmail.com','eshh'),
+	(18,'ss','svfg@gmail.com','grws'),
+	(19,'Peter','peter@peter.com','Peter1234'),
+	(20,'Vic','vic@vic.com','Vitoria1234');
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
