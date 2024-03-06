@@ -6,40 +6,37 @@ require_once 'SessionHandler.php';
 
 session_start();
 
-function verifyLogin(): void
-{
-    $session = new SessionHandles();
-    if ($session->checkUserLoggedIn()) {
-        header('Location: index.php'); }
+$session = new SessionHandles();
+if ($session->checkUserLoggedIn()) {
+    header('Location: index.php');
+}
 
 
-    if (isset($_POST['email'])) {
+if (isset($_POST['email'], $_POST['password'])) {
 
-        $inputtedEmail = $_POST['email'];
-        $inputtedPassword = $_POST['password'];
+    $inputtedEmail = $_POST['email'];
+    $inputtedPassword = $_POST['password'];
 
-        $db = connectToDB();
-        $usersModel = new UsersModel($db);
+    $db = connectToDB();
+    $usersModel = new UsersModel($db);
 
-        $users = $usersModel->selectUser($inputtedEmail);
-        if ($users === null) {
-            echo 'User does not exist';
+    $users = $usersModel->selectUser($inputtedEmail);
+    if ($users === null) {
+        echo 'User does not exist';
+    } else {
+        $storedPassword = $users->password;
+        $storedEmail = $users->emailAddress;
+
+        if ((password_verify($inputtedPassword, $storedPassword)) && ($inputtedEmail == $storedEmail)) {
+            $session = new SessionHandles();
+            $session->LoginUser($users);
+            header('Location: index.php');
         } else {
-            $storedPassword = $users->password;
-            $storedEmail = $users->emailAddress;
-
-            if ((password_verify($inputtedPassword, $storedPassword)) && ($inputtedEmail == $storedEmail)) {
-                $session = new SessionHandles();
-                $session->LoginUser($users);
-                header('Location: index.php');
-            } else {
-                echo 'Sorry, your username or password is incorrect';
-            }
+            echo 'Sorry, your username or password is incorrect';
         }
     }
 }
 
-verifyLogin();
 
 ?>
 <!DOCTYPE html>

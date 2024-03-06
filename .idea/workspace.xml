@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f613e056-e5dc-434d-bafb-f55d1ec64572" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/connectToDB.php" beforeDir="false" afterPath="$PROJECT_DIR$/connectToDB.php" afterDir="false" />
-    </list>
+    <list default="true" id="f613e056-e5dc-434d-bafb-f55d1ec64572" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -87,7 +85,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/login.php</url>
-          <line>20</line>
+          <line>19</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
