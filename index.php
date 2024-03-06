@@ -28,7 +28,7 @@ $postsViewHelper = new \src\PostsViewHelper();
         </div>'; }
     if (!isset($_SESSION['userid'])) {
         echo '<div class="flex gap-5">
-        <a href="register.php">Register</a>
+        <a href="registration.php">Register</a>
         </div>';
     } ?>
 </nav>

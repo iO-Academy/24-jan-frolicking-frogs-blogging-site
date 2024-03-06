@@ -7,11 +7,8 @@
     <list default="true" id="f613e056-e5dc-434d-bafb-f55d1ec64572" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/password.php" beforeDir="false" afterPath="$PROJECT_DIR$/password.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/registration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entities/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interfaces/VerifyUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interfaces/VerifyUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/UsersModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/UsersModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/PostViewHelperTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/PostViewHelperTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +24,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/usr/local/Cellar/php@8.2/8.2.13/bin/php" />
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 6
@@ -40,7 +38,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "fix",
+    "git-widget-placeholder": "S3T6",
     "last_opened_file_path": "/Users/victoriamccusker/sites/academyServer/html/24-jan-frolicking-frogs-blogging-site",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
