@@ -6,6 +6,8 @@ require_once 'SessionHandler.php';
 
 session_start();
 
+$errorMessage = '';
+
 if (isset($_POST['submit']))
     {
 
@@ -20,11 +22,11 @@ if (isset($_POST['submit']))
     $postsModel->addPost($inputtedTitle, $inputtedContent, $currentUserId);
 
         if(strlen($inputtedTitle) > 30) {
-            echo 'Title should be less than 30 characters in length.';
+            $errorMessage = 'Title should be less than 30 characters in length.';
         } elseif(strlen($inputtedContent) < 50 || strlen($inputtedContent) > 1000) {
-            echo 'Content must have between 50 to 1000 characters';
+            $errorMessage = 'Content must have between 50 to 1000 characters';
         } else {
-            echo 'Congratulations! Your post has been added to our blog! Thanks for contributing to our network!';
+            $errorMessage = 'Congratulations! Your post has been added to our blog! Thanks for contributing to our network!';
         }
 
 }
@@ -66,7 +68,7 @@ if (isset($_POST['submit']))
         <label class="mb-3 block" for="content">Content:</label>
         <textarea class="w-full" name="content" id="content" rows="9"></textarea>
     </div>
-
+    <p><?php echo $errorMessage ?></p>
     <input class="px-3 py-2 mt-4 text-lg bg-indigo-400 hover:bg-indigo-700 hover:text-white transition inline-block rounded-sm" name="submit" type="submit" value="Create Post" />
 </form>
 
