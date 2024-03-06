@@ -2,6 +2,7 @@
 
 
 require_once 'src/Entities/User.php';
+require_once 'emailAddress.php';
 
 
 class UsersModel
@@ -33,7 +34,7 @@ class UsersModel
 
         $data = $query->fetch();
 
-        if ($data === false) {
+        if (!$data) {
             return null;
         }
 
@@ -42,14 +43,14 @@ class UsersModel
     }
 
     private function hydrateSingleUser(array $data): User {
-        return new User($data['id'], $data['user-name'], $data['password'], $data['email-address']);
+        return new User($data['id'], $data['user-name'], $data['password'], new EmailAddress($data['email-address']));
     }
 
     private function hydrateMultipleUsers(array $data): array
     {
         $users = [];
         foreach ($data as $user) {
-            $users[] = new User($user['id'], $user['user-name'], $user['password'], $user['email-address']);
+            $users[] = new User($user['id'], $user['user-name'], $user['password'], new EmailAddress($user['email-address']));
         }
         return $users;
     }

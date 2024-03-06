@@ -2,16 +2,21 @@
 
 require_once 'connectToDB.php';
 require_once 'src/Models/UsersModel.php';
+require_once 'SessionHandler.php';
 
 session_start();
+
 function verifyLogin(): void
 {
+
+//    if (isset($_SESSION['userid'])){
+//        header('Location: index.php'); }
+
+
     if (isset($_POST['username'])) {
 
         $inputtedUsername = $_POST['username'];
         $inputtedPassword = $_POST['password'];
-
-        $hashedPassword = password_hash($inputtedPassword, PASSWORD_BCRYPT);
 
         $db = connectToDB();
         $usersModel = new UsersModel($db);
@@ -23,9 +28,9 @@ function verifyLogin(): void
             $storedPassword = $users->password;
             $storedUsername = $users->username;
 
-            if ((password_verify($storedPassword, $hashedPassword)) && ($inputtedUsername === $storedUsername)) {
-                $_SESSION['userid'] = $users->id;
-                $_SESSION['username'] = $users->username;
+            if ((password_verify($inputtedPassword, $storedPassword)) && ($inputtedUsername === $storedUsername)) {
+                $session = new SessionHandles();
+                $session->LoginUser($users);
                 header('Location: index.php');
             } else {
                 echo 'Sorry, your username or password is incorrect';
