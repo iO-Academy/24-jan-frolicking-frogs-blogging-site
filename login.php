@@ -68,7 +68,7 @@ if (isset($_POST['email'], $_POST['password'])) {
     </div>
 
     <input class="px-3 py-2 mt-4 text-lg bg-indigo-400 hover:bg-indigo-700 hover:text-white transition inline-block rounded-sm" type="submit" value="Login" />
-    <p><?php echo $errorMessage ?></p>
+    <?php echo $errorMessage ?>
 </form>
 
 <div class="text-center"></div>
