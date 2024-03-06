@@ -10,15 +10,12 @@ $errorMessage = '';
 
 if (isset($_POST['submit']))
     {
-
     $inputtedTitle = $_POST['title'];
     $inputtedContent = $_POST['content'];
     $currentUserId = $_SESSION['userid'];
 
     $db = connectToDb();
-
     $postsModel = new PostModel($db);
-
     $postsModel->addPost($inputtedTitle, $inputtedContent, $currentUserId);
 
         if(strlen($inputtedTitle) > 30) {
@@ -28,7 +25,6 @@ if (isset($_POST['submit']))
         } else {
             $errorMessage = 'Congratulations! Your post has been added to our blog! Thanks for contributing to our network!';
         }
-
 }
 ?>
 <!DOCTYPE html>

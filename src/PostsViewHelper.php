@@ -17,8 +17,16 @@ class PostsViewHelper
                 </div>
                 <p class='text-2xl mb-2'> {$post->dateTime} - {$post->authorName} </p>";
             $postString .= "<p>" . mb_strimwidth($post->content, 0, 100, '...') . "</p>
-                </article>";
+            <div class='flex justify-center'>
+            <a class='px-3 py-2 mt-4 text-lg bg-indigo-400 hover:bg-indigo-700 hover:text-white transition inline-block rounded-sm' href='singlePost.php'>View post</a>
+            </div>
+            </article>";
         }
         return $postString;
+    }
+
+    public function displaySinglePost()
+    {
+
     }
 }
