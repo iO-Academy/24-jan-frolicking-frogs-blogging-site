@@ -1,9 +1,7 @@
 <?php
 
-
 require_once 'src/Entities/User.php';
 require_once 'emailAddress.php';
-
 
 class UsersModel
 {
@@ -32,16 +30,14 @@ class UsersModel
 
     }
 
-    public function addUser(string $inputtedUsername, EmailAddress $inputtedEmail, string $inputtedPassword)
+    public function addUser(string $inputtedUsername, EmailAddress $inputtedEmail, Password $inputtedPassword)
     {
-
         $query = $this->db->prepare("INSERT INTO `users` (`user-name`, `email-address`, `password`) VALUES (:username, :emailAddress, :password);");
         $query->execute([
             ':username' => $inputtedUsername,
             ':emailAddress' => $inputtedEmail,
-            ':password' => $inputtedPassword,
+            ':password' => $inputtedPassword
         ]);
-
     }
 
     public function checkUser(string $inputtedUsername)

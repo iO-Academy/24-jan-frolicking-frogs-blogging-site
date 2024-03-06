@@ -26,6 +26,7 @@ $postsViewHelper = new \src\PostsViewHelper();
         if (!$session->checkUserLoggedIn()) {
         echo '<div class="flex gap-5">
         <a href="login.php">Login</a>
+        <a href="registration.php">Register</a>
         </div>'; } else {
         echo '<div class="flex gap-5">
         <a href="addPost.php">Create Post</a>
