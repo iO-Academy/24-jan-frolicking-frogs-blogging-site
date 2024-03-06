@@ -32,7 +32,7 @@ if (isset($_POST['email'], $_POST['password'])) {
             $session->LoginUser($users);
             header('Location: index.php');
         } else {
-            echo 'Sorry, your username or password is incorrect';
+            echo 'Sorry, your email or password is incorrect';
         }
     }
 }
