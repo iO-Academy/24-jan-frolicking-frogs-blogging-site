@@ -11,6 +11,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
 =======
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/password.php" beforeDir="false" afterPath="$PROJECT_DIR$/password.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/registration.php" afterDir="false" />
@@ -18,6 +19,8 @@
       <change beforePath="$PROJECT_DIR$/src/Interfaces/VerifyUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interfaces/VerifyUser.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Models/UsersModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/UsersModel.php" afterDir="false" />
 >>>>>>> c806a07202478bd4cb1da1ff16606ffa68e9002b
+=======
+>>>>>>> b5d6a074fd8ee2acf213c477dcd683418a5ee845
     </list>
 =======
     <list default="true" id="f613e056-e5dc-434d-bafb-f55d1ec64572" name="Changes" comment="" />
@@ -41,6 +44,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/usr/local/Cellar/php@8.2/8.2.13/bin/php" />
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 6
@@ -56,6 +60,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "git-widget-placeholder": "S4T1",
 =======
     "git-widget-placeholder": "story2",
@@ -63,6 +68,9 @@
 =======
     "git-widget-placeholder": "fix",
 >>>>>>> c806a07202478bd4cb1da1ff16606ffa68e9002b
+=======
+    "git-widget-placeholder": "S3T6",
+>>>>>>> b5d6a074fd8ee2acf213c477dcd683418a5ee845
     "last_opened_file_path": "/Users/victoriamccusker/sites/academyServer/html/24-jan-frolicking-frogs-blogging-site",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
