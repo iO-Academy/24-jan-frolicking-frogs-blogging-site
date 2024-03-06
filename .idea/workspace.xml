@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="f613e056-e5dc-434d-bafb-f55d1ec64572" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
+=======
+    <list default="true" id="f613e056-e5dc-434d-bafb-f55d1ec64572" name="Changes" comment="" />
+>>>>>>> 8b9b9304316b87d2aeb60ca05af372b538198341
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,7 +44,11 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+<<<<<<< HEAD
     "git-widget-placeholder": "S4T1",
+=======
+    "git-widget-placeholder": "story2",
+>>>>>>> 8b9b9304316b87d2aeb60ca05af372b538198341
     "last_opened_file_path": "/Users/victoriamccusker/sites/academyServer/html/24-jan-frolicking-frogs-blogging-site",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -67,10 +75,27 @@
       <updated>1709642655176</updated>
       <workItem from="1709642656443" duration="917000" />
       <workItem from="1709645807002" duration="1295000" />
+<<<<<<< HEAD
+=======
+      <workItem from="1709664103952" duration="2000" />
+      <workItem from="1709715898397" duration="33000" />
+      <workItem from="1709715948917" duration="724000" />
+>>>>>>> 8b9b9304316b87d2aeb60ca05af372b538198341
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/login.php</url>
+          <line>20</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
