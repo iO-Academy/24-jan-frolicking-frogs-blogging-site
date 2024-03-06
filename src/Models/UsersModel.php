@@ -15,21 +15,11 @@ class UsersModel
         $this->db = $db;
     }
 
-    public function getAllUsers()
+    public function selectUser(string $inputtedEmail): User|null
     {
-
-        $query = $this->db->prepare('SELECT `id`, `user-name`, `email-address`, `password` FROM `users`;');
-        $query->execute();
-        $data = $query->fetchAll();
-
-        return $this->hydrateMultipleUsers($data);
-    }
-
-    public function selectUser(string $inputtedUsername): User|null
-    {
-        $query = $this->db->prepare('SELECT `id`, `user-name`, `email-address`, `password` FROM `users` WHERE `user-name` = :inputtedUsername');
+        $query = $this->db->prepare('SELECT `id`, `user-name`, `email-address`, `password` FROM `users` WHERE `email-address` = :inputtedEmail');
         $query->execute([
-            ':inputtedUsername' => $inputtedUsername
+            ':inputtedEmail' => $inputtedEmail
         ]);
 
         $data = $query->fetch();

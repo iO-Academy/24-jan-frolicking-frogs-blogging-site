@@ -8,27 +8,27 @@ session_start();
 
 function verifyLogin(): void
 {
+    $session = new SessionHandles();
+    if ($session->checkUserLoggedIn()) {
+        header('Location: index.php'); }
 
-//    if (isset($_SESSION['userid'])){
-//        header('Location: index.php'); }
 
+    if (isset($_POST['email'])) {
 
-    if (isset($_POST['username'])) {
-
-        $inputtedUsername = $_POST['username'];
+        $inputtedEmail = $_POST['email'];
         $inputtedPassword = $_POST['password'];
 
         $db = connectToDB();
         $usersModel = new UsersModel($db);
 
-        $users = $usersModel->selectUser($inputtedUsername);
+        $users = $usersModel->selectUser($inputtedEmail);
         if ($users === null) {
             echo 'User does not exist';
         } else {
             $storedPassword = $users->password;
-            $storedUsername = $users->username;
+            $storedEmail = $users->emailAddress;
 
-            if ((password_verify($inputtedPassword, $storedPassword)) && ($inputtedUsername === $storedUsername)) {
+            if ((password_verify($inputtedPassword, $storedPassword)) && ($inputtedEmail == $storedEmail)) {
                 $session = new SessionHandles();
                 $session->LoginUser($users);
                 header('Location: index.php');
@@ -59,8 +59,8 @@ verifyLogin();
 <form method="post" class="container lg:w-1/4 mx-auto flex flex-col p-8 bg-slate-200">
     <h2 class="text-3xl mb-4 text-center">Login</h2>
     <div class="mb-5">
-        <label class="mb-3 block" for="username">Username:</label>
-        <input class="w-full px-3 py-2 text-lg" type="text" id="username" name="username" />
+        <label class="mb-3 block" for="email">Email:</label>
+        <input class="w-full px-3 py-2 text-lg" type="email" id="email" name="email" />
     </div>
 
     <div class="mb-5">
