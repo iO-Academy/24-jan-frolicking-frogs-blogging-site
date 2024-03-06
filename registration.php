@@ -7,30 +7,34 @@ require_once 'password.php';
 
 session_start();
 
-if (isset($_POST['username'])) {
+$errorMessage = '';
 
-    $inputtedUsername = $_POST['username'];
-    $inputtedEmail = new EmailAddress($_POST['email']);
-    $inputtedPassword = new Password($_POST['password']);
+    if (isset($_POST['username'])) {
 
-    $db = connectToDb();
+        $inputtedUsername = $_POST['username'];
+        $inputtedEmail = new EmailAddress($_POST['email']);
+        $inputtedPassword = new Password($_POST['password']);
 
-    $usersModel = new UsersModel($db);
+        $db = connectToDb();
 
-    $user = $usersModel->checkUser($inputtedUsername);
+        $usersModel = new UsersModel($db);
 
-    if (!empty($user)) {
-        echo 'This username is taken';
+        $user = $usersModel->checkUser($inputtedUsername);
 
-    } else if ($inputtedPassword == '') {
-        echo '';
-    } else {
-        header('Location: index.php');
-        $usersModel->addUser($inputtedUsername, $inputtedEmail, $inputtedPassword);
-        $users = $usersModel->selectUser($inputtedUsername);
-        $_SESSION['userid'] = $users->id;
-        $_SESSION['username'] = $users->username;
-    }
+        if (!empty($user)) {
+            $errorMessage = 'This username is taken';
+
+        } else if ($inputtedPassword == '') {
+            $errorMessage = 'Password should be at least 8 characters in length
+             and should include at least one upper case letter and one number';
+        } else {
+            header('Location: index.php');
+            $usersModel->addUser($inputtedUsername, $inputtedEmail, $inputtedPassword);
+            $users = $usersModel->selectUser($inputtedUsername);
+            $_SESSION['userid'] = $users->id;
+            $_SESSION['username'] = $users->username;
+        }
+
 }
 ?>
 <!DOCTYPE html>
@@ -66,6 +70,7 @@ if (isset($_POST['username'])) {
     </div>
 
     <input class="px-3 py-2 mt-4 text-lg bg-indigo-400 hover:bg-indigo-700 hover:text-white transition inline-block rounded-sm" type="submit" value="Register" />
+    <?php echo $errorMessage ?>
 </form>
 
 </body>
