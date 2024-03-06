@@ -28,17 +28,16 @@ class PostModel {
         }
         return $posts;
     }
-    public function addPost(string $inputtedTitle, string $inputtedContent): void
+    public function addPost(string $inputtedTitle, string $inputtedContent, int $userId)
     {
 
-        $query = $this->db->prepare("INSERT INTO `posts` (`title`, `content`) VALUES (:title, :content");
+        $query = $this->db->prepare("INSERT INTO `posts` (`title`, `content`, `date-time`, `user-id`) VALUES (:title, :content, CURRENT_TIMESTAMP(), :userId);");
         $query->execute([
             ':title' => $inputtedTitle,
             ':content' => $inputtedContent,
+            ':userId' => $userId,
         ]);
 
     }
-
-
 
 }
