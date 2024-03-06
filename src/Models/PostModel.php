@@ -24,7 +24,7 @@ class PostModel {
     {
         $posts = [];
         foreach ($data as $post) {
-            $posts[] = new Post($post['title'], $post['author-name'], $post['content'], $post['date-time']);
+            $posts[] = new Post($post['id'], $post['title'], $post['author-name'], $post['content'], $post['date-time']);
         }
         return $posts;
     }
@@ -38,6 +38,25 @@ class PostModel {
             ':userId' => $userId,
         ]);
 
+    }
+
+    public function getSinglePostById(string $id)
+    {
+        $query = $this->db->prepare('SELECT * FROM `posts` WHERE `id` = :id;');
+        $query->execute([
+            ':id' => $id
+        ]);
+        $data = $query->fetch();
+
+        if ($data === false) {
+            return null;
+        }
+
+        return $this->hydrateSinglePost($data);
+    }
+
+    private function hydrateSinglePost(array $data): Post {
+        return new Post($data['id'], $data['title'], $data['author-name'], $data['content'], $data['date-time']);
     }
 
 }
