@@ -27,18 +27,6 @@ if (isset($_POST['submit']))
             echo 'Congratulations! Your post has been added to our blog! Thanks for contributing to our network!';
         }
 
-//    $post = $postsModel->checkPost($inputtedTitle, $inputtedContent);
-//
-//    if (!empty($post))
-//    {
-//        echo 'This username is taken';
-//    }
-//    else
-//    {
-//        $postsModel->addPost($inputtedTitle, $inputtedContent);
-//        header('Location: index.php');
-//
-//    }
 }
 ?>
 <!DOCTYPE html>
