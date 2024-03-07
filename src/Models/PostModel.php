@@ -24,7 +24,7 @@ FROM `posts` INNER JOIN `users` ON `posts`.`user-id` = `users`.`id` ORDER BY `da
     {
         $posts = [];
         foreach ($data as $post) {
-            $posts[] = new Post($post['title'], $post['user-name'], $post['content'], $post['date-time']);
+            $posts[] = new Post($post['id'], $post['title'], $post['user-name'], $post['content'], $post['date-time']);
         }
         return $posts;
     }
@@ -42,7 +42,8 @@ FROM `posts` INNER JOIN `users` ON `posts`.`user-id` = `users`.`id` ORDER BY `da
 
     public function getSinglePostById(string $id)
     {
-        $query = $this->db->prepare('SELECT * FROM `posts` WHERE `id` = :id;');
+        $query = $this->db->prepare('SELECT `posts`.`id`,`title`, `posts`.`content`, `posts`.`date-time`, `posts`.`user-id`, `users`.`user-name` 
+FROM `posts` INNER JOIN `users` ON `posts`.`user-id` = `users`.`id` WHERE `posts`.`id` = :id;');
         $query->execute([
             ':id' => $id
         ]);
@@ -56,7 +57,7 @@ FROM `posts` INNER JOIN `users` ON `posts`.`user-id` = `users`.`id` ORDER BY `da
     }
 
     private function hydrateSinglePost(array $data): Post {
-        return new Post($data['id'], $data['title'], $data['author-name'], $data['content'], $data['date-time']);
+        return new Post($data['id'], $data['title'], $data['user-name'], $data['content'], $data['date-time']);
     }
 
 }
