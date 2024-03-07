@@ -12,8 +12,8 @@ class PostModel {
 
     public function getAllPosts()
     {
-        $query = $this->db->prepare('SELECT `id`,`title`, `content`,`author-name`, `date-time`, `user-id` 
-        FROM `posts` ORDER BY `date-time` DESC');
+        $query = $this->db->prepare('SELECT `posts`.`id`,`title`, `posts`.`content`,`posts`.`author-name`, `posts`.`date-time`, `posts`.`user-id`, `users`.`user-name` 
+FROM `posts` INNER JOIN `users` ON `posts`.`user-id` = `users`.`id` ORDER BY `date-time` DESC;');
         $query->execute();
         $data = $query->fetchAll();
 
@@ -24,7 +24,7 @@ class PostModel {
     {
         $posts = [];
         foreach ($data as $post) {
-            $posts[] = new Post($post['title'], $post['author-name'], $post['content'], $post['date-time']);
+            $posts[] = new Post($post['title'], $post['user-name'], $post['content'], $post['date-time']);
         }
         return $posts;
     }

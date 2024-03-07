@@ -30,8 +30,8 @@ $postsViewHelper = new \src\PostsViewHelper();
         <a href="login.php">Create Post</a>
         </div>'; } else {
         echo '<div class="flex gap-5">
-        <a href="logout.php">Logout</a>
         <a href="addPost.php">Create Post</a>
+        <a href="logout.php">Logout</a>
         </div>'; }?>
 </nav>
 <section class="container lg:w-1/2 mx-auto flex flex-col gap-5">
