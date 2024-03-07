@@ -62,21 +62,25 @@ class PostModel {
     public function LikePost(int $postId, int $userId) :void
     {
             $query = $this->db->prepare('INSERT INTO `reactions` (`user_id`, `post_id`, `reaction`) VALUES (:userId, :postId, :reaction)');
-            $query->execute([
-                ':userId' => $userId,
-                ':postId' => $postId,
-                ':reaction' => 'like',
-            ]);
+            if ($userId > 0) {
+                $query->execute([
+                    ':userId' => $userId,
+                    ':postId' => $postId,
+                    ':reaction' => 'like',
+                ]);
+            }
     }
 
     public function DislikePost(int $postId, int $userId) :void
     {
             $query = $this->db->prepare('INSERT INTO `reactions` (`user_id`, `post_id`, `reaction`) VALUES (:userId, :postId, :reaction)');
-            $query->execute([
-                ':userId' => $userId,
-                ':postId' => $postId,
-                ':reaction' => 'dislike',
-            ]);
+            if ($userId > 0) {
+                $query->execute([
+                    ':userId' => $userId,
+                    ':postId' => $postId,
+                    ':reaction' => 'dislike',
+                ]);
+            }
     }
 
 //    public function GetPostLikes($id) :int
