@@ -12,7 +12,7 @@ class PostModel {
 
     public function getAllPosts()
     {
-        $query = $this->db->prepare('SELECT `posts`.`id`,`title`, `posts`.`content`,`posts`.`author-name`, `posts`.`date-time`, `posts`.`user-id`, `users`.`user-name` 
+        $query = $this->db->prepare('SELECT `posts`.`id`,`title`, `posts`.`content`, `posts`.`date-time`, `posts`.`user-id`, `users`.`user-name` 
 FROM `posts` INNER JOIN `users` ON `posts`.`user-id` = `users`.`id` ORDER BY `date-time` DESC;');
         $query->execute();
         $data = $query->fetchAll();
