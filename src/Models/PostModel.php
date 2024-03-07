@@ -66,7 +66,7 @@ class PostModel {
                 $query->execute([
                     ':userId' => $userId,
                     ':postId' => $postId,
-                    ':reaction' => true,
+                    ':reaction' => 1,
                 ]);
             }
     }
@@ -78,13 +78,20 @@ class PostModel {
                 $query->execute([
                     ':userId' => $userId,
                     ':postId' => $postId,
-                    ':reaction' => true,
+                    ':reaction' => 0,
                 ]);
             }
     }
 
-    public function HasLiked() {
-        $query = $this->db->prepare('SELECT `user_id` FROM `reactions` WHERE `post_id` = :post_id');
+    public function HasLiked(int $postId, int $userId)
+    {
+        $query = $this->db->prepare('SELECT `user_id` FROM `reactions` WHERE `post_id` = :post_id AND `user_id` = :user_id');
+        $data = $query->execute([
+            ':post_id' => $postId,
+            ':user_id' => $userId
+            ]);
+
+        return $data;
     }
 
 }

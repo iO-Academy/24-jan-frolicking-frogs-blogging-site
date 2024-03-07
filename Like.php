@@ -15,5 +15,9 @@ if (!$session->checkUserLoggedIn()) {
     $db = connectToDB();
     $postModel = new PostModel($db);
     $userId = $_SESSION['userid'];
-    $postModel->LikePost($postId, $userId);
+    if ($postModel->HasLiked($postId, $userId) === false) {
+        $postModel->LikePost($postId, $userId);
+    } else {
+        echo 'hello';
+    }
 }
