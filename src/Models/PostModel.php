@@ -59,4 +59,50 @@ class PostModel {
         return new Post($data['id'], $data['title'], $data['author-name'], $data['content'], $data['date-time']);
     }
 
+    public function LikePost(int $postId, int $userId) :void
+    {
+            $query = $this->db->prepare('INSERT INTO `reactions` (`user_id`, `post_id`, `reaction`) VALUES (:userId, :postId, :reaction)');
+            $query->execute([
+                ':userId' => $userId,
+                ':postId' => $postId,
+                ':reaction' => 'like',
+            ]);
+    }
+
+    public function DislikePost(int $postId, int $userId) :void
+    {
+            $query = $this->db->prepare('INSERT INTO `reactions` (`user_id`, `post_id`, `reaction`) VALUES (:userId, :postId, :reaction)');
+            $query->execute([
+                ':userId' => $userId,
+                ':postId' => $postId,
+                ':reaction' => 'dislike',
+            ]);
+    }
+
+//    public function GetPostLikes($id) :int
+//    {
+//        $query = $this->db->prepare("SELECT COUNT(*)
+//					FROM `reactions`
+//					WHERE `post_id` = $id
+//				    AND `reaction` ='like'");
+//
+//        $results = $query->execute();
+//
+//        return $results;
+//    }
+//
+//    public function GetPostDislikes($id) :int
+//    {
+//
+//        $query = $this->db->prepare("SELECT COUNT(`reaction`,`post_id`, `user_id`)
+//					FROM `reactions`
+//					WHERE `post_id` = $id
+//				    AND `reaction` ='dislike'");
+//
+//        $results = $query->execute();
+//
+//        return $results;
+//    }
+
 }
+

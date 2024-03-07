@@ -2,15 +2,16 @@
 
 require_once 'connectToDB.php';
 require_once 'src/Models/PostModel.php';
+require_once 'SessionHandler.php';
 
 $db = connectToDB();
 $postModel = new PostModel($db);
 
 session_start();
-
 $singlePostDetails = $postModel->getSinglePostById($_GET['id']);
 
-//var_dump($singlePostDetails);
+$postId = $_GET['id'];
+$userId = $_SESSION['userid'];
 
 ?>
 
@@ -38,8 +39,11 @@ $singlePostDetails = $postModel->getSinglePostById($_GET['id']);
         <p class="text-2xl mb-10"><?php echo $singlePostDetails->dateTime; ?> - By <?php echo $singlePostDetails->authorName; ?></p>
         <p><?php echo $singlePostDetails->content; ?></p>
         <div class="flex justify-center gap-5">
-            <a class="px-3 py-2 mt-4 text-lg bg-green-300 hover:bg-green-400 hover:text-white transition inline-block rounded-sm" href="Like.php">Like</a>
-            <a class="px-3 py-2 mt-4 text-lg bg-red-300 hover:bg-red-400 hover:text-white transition inline-block rounded-sm" href="#">Dislike</a>
+           <?php echo '<a class="px-3 py-2 mt-4 text-lg bg-green-300 hover:bg-green-400 hover:text-white transition inline-block rounded-sm" href="Like.php">Like</a>';
+           $postModel->LikePost($postId, $userId); ?>
+
+            <?php echo '<a class="px-3 py-2 mt-4 text-lg bg-red-300 hover:bg-red-400 hover:text-white transition inline-block rounded-sm" href="Dislike.php">Dislike </a>';
+            $postModel->DislikePost($postId, $userId);?>
         </div>
         <div class="flex justify-center">
             <a class="px-3 py-2 mt-4 text-lg bg-indigo-400 hover:bg-indigo-700 hover:text-white transition inline-block rounded-sm" href="index.php">View all posts</a>
