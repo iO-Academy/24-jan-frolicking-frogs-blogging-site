@@ -1,6 +1,7 @@
 <?php
 
 require_once 'src/Entities/User.php';
+require_once 'emailAddress.php';
 
 class UsersModel
 {
@@ -12,26 +13,16 @@ class UsersModel
         $this->db = $db;
     }
 
-    public function getAllUsers()
+    public function selectUser(string $inputtedEmail): User|null
     {
-
-        $query = $this->db->prepare('SELECT `id`, `user-name`, `email-address`, `password` FROM `users`;');
-        $query->execute();
-        $data = $query->fetchAll();
-
-        return $this->hydrateMultipleUsers($data);
-    }
-
-    public function selectUser(string $inputtedUsername): User|null
-    {
-        $query = $this->db->prepare('SELECT `id`, `user-name`, `email-address`, `password` FROM `users` WHERE `user-name` = :inputtedUsername');
+        $query = $this->db->prepare('SELECT `id`, `user-name`, `email-address`, `password` FROM `users` WHERE `email-address` = :inputtedEmail');
         $query->execute([
-            ':inputtedUsername' => $inputtedUsername
+            ':inputtedEmail' => $inputtedEmail
         ]);
 
         $data = $query->fetch();
 
-        if ($data === false) {
+        if (!$data) {
             return null;
         }
 
@@ -65,14 +56,14 @@ class UsersModel
 
 
     private function hydrateSingleUser(array $data): User {
-        return new User($data['id'], $data['user-name'], $data['password'], $data['email-address']);
+        return new User($data['id'], $data['user-name'], $data['password'], new EmailAddress($data['email-address']));
     }
 
     private function hydrateMultipleUsers(array $data): array
     {
         $users = [];
         foreach ($data as $user) {
-            $users[] = new User($user['id'], $user['user-name'], $user['password'], $user['email-address']);
+            $users[] = new User($user['id'], $user['user-name'], $user['password'], new EmailAddress($user['email-address']));
         }
         return $users;
     }

@@ -4,6 +4,7 @@ require_once 'connectToDB.php';
 require_once 'src/Models/UsersModel.php';
 require_once 'emailAddress.php';
 require_once 'password.php';
+require_once 'SessionHandler.php';
 
 session_start();
 
@@ -25,11 +26,11 @@ if (isset($_POST['username'])) {
     } else if ($inputtedPassword == '') {
         echo '';
     } else {
-        header('Location: index.php');
         $usersModel->addUser($inputtedUsername, $inputtedEmail, $inputtedPassword);
-        $users = $usersModel->selectUser($inputtedUsername);
-        $_SESSION['userid'] = $users->id;
-        $_SESSION['username'] = $users->username;
+        $users = $usersModel->selectUser($inputtedEmail);
+        $session = new SessionHandles();
+        $session->LoginUser($users);
+        header('Location: index.php');
     }
 }
 ?>

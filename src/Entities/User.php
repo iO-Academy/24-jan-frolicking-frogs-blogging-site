@@ -7,9 +7,9 @@ readonly class User {
 
     public string $password;
 
-    public string $emailAddress;
+    public EmailAddress $emailAddress;
 
-    public function __construct(int $id, string $username, string $password, string $emailAddress)
+    public function __construct(int $id, string $username, string $password, EmailAddress $emailAddress)
     {
         $this->id = $id;
         $this->username = $username;
