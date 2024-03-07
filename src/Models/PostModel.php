@@ -66,7 +66,7 @@ class PostModel {
                 $query->execute([
                     ':userId' => $userId,
                     ':postId' => $postId,
-                    ':reaction' => 'like',
+                    ':reaction' => true,
                 ]);
             }
     }
@@ -78,35 +78,14 @@ class PostModel {
                 $query->execute([
                     ':userId' => $userId,
                     ':postId' => $postId,
-                    ':reaction' => 'dislike',
+                    ':reaction' => true,
                 ]);
             }
     }
 
-//    public function GetPostLikes($id) :int
-//    {
-//        $query = $this->db->prepare("SELECT COUNT(*)
-//					FROM `reactions`
-//					WHERE `post_id` = $id
-//				    AND `reaction` ='like'");
-//
-//        $results = $query->execute();
-//
-//        return $results;
-//    }
-//
-//    public function GetPostDislikes($id) :int
-//    {
-//
-//        $query = $this->db->prepare("SELECT COUNT(`reaction`,`post_id`, `user_id`)
-//					FROM `reactions`
-//					WHERE `post_id` = $id
-//				    AND `reaction` ='dislike'");
-//
-//        $results = $query->execute();
-//
-//        return $results;
-//    }
+    public function HasLiked() {
+        $query = $this->db->prepare('SELECT `user_id` FROM `reactions` WHERE `post_id` = :post_id');
+    }
 
 }
 
