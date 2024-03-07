@@ -20,7 +20,7 @@ class PostModel {
         return $this->hydrateMultiplePosts($data);
     }
 
-    private function hydrateMultiplePosts(array $data)
+    private function hydrateMultiplePosts(array $data): array
     {
         $posts = [];
         foreach ($data as $post) {
@@ -28,7 +28,7 @@ class PostModel {
         }
         return $posts;
     }
-    public function addPost(string $inputtedTitle, string $inputtedContent, int $userId)
+    public function addPost(string $inputtedTitle, string $inputtedContent, int $userId): void
     {
 
         $query = $this->db->prepare("INSERT INTO `posts` (`title`, `content`, `date-time`, `user-id`) VALUES (:title, :content, CURRENT_TIMESTAMP(), :userId);");
