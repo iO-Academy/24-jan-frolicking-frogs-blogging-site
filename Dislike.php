@@ -15,5 +15,8 @@ if (!$session->checkUserLoggedIn()) {
     $db = connectToDB();
     $postModel = new PostModel($db);
     $userId = $_SESSION['userid'];
-    $postModel->DislikePost($postId, $userId);
+    $data = $postModel->HasDisliked($postId, $userId);
+    if (!$data) {
+        $postModel->DislikePost($postId, $userId);
+    }
 }

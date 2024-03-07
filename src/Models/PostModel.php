@@ -83,13 +83,28 @@ class PostModel {
             }
     }
 
-    public function HasLiked(int $postId, int $userId)
+    public function HasLiked(int $postId, int $userId) :int
     {
-        $query = $this->db->prepare('SELECT `user_id` FROM `reactions` WHERE `post_id` = :post_id AND `user_id` = :user_id');
-        $data = $query->execute([
+        $query = $this->db->prepare('SELECT `user_id` FROM `reactions` WHERE `post_id` = :post_id AND `user_id` = :user_id AND `reaction` = 1');
+        $query->execute([
             ':post_id' => $postId,
             ':user_id' => $userId
             ]);
+
+        $data = $query->fetch();
+
+        return $data;
+    }
+
+    public function HasDisliked(int $postId, int $userId) :int
+    {
+        $query = $this->db->prepare('SELECT `user_id` FROM `reactions` WHERE `post_id` = :post_id AND `user_id` = :user_id AND `reaction` = 0');
+        $query->execute([
+            ':post_id' => $postId,
+            ':user_id' => $userId
+        ]);
+
+        $data = $query->fetch();
 
         return $data;
     }
