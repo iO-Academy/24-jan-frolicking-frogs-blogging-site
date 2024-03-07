@@ -7,7 +7,17 @@ $postModel = new PostModel($db);
 
 session_start();
 
-$singlePostDetails = $postModel->getSinglePostById($_GET['id']);
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+
+    $singlePostDetails = $postModel->getSinglePostById($id);
+
+    if (!$singlePostDetails) {
+        header('Location: index.php');
+    }
+} else {
+    header('Location: index.php');
+}
 
 $formattedDate = date('d/m/Y', strtotime($singlePostDetails->dateTime));
 ?>
