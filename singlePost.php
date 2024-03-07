@@ -7,7 +7,10 @@ $db = connectToDB();
 $postModel = new PostModel($db);
 
 session_start();
-$singlePostDetails = $postModel->getSinglePostById($_GET['id']);
+$postId = $_GET['id'];
+$singlePostDetails = $postModel->getSinglePostById($postId);
+$dislikes = $postModel->DislikeCount($postId);
+$likes = $postModel->LikeCount($postId);
 
 ?>
 
@@ -30,7 +33,7 @@ $singlePostDetails = $postModel->getSinglePostById($_GET['id']);
     <article class="p-8 border border-solid rounded-md">
         <div class="flex justify-between items-center flex-col md:flex-row mb-4">
             <h2 class="text-4xl"><?php echo $singlePostDetails->title; ?></h2>
-            <span class="text-xl">100 likes - 50 dislikes</span>
+            <span class="text-xl"><?php echo "{$likes['COUNT(`reaction`)']} likes - {$dislikes['COUNT(`reaction`)']} dislikes"; ?></span>
         </div>
         <p class="text-2xl mb-10"><?php echo $singlePostDetails->dateTime; ?> - By <?php echo $singlePostDetails->authorName; ?></p>
         <p><?php echo $singlePostDetails->content; ?></p>

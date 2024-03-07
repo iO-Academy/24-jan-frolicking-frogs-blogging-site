@@ -108,6 +108,31 @@ class PostModel {
 
         return $data;
     }
+    public function DislikeCount(int $postId) :array
+    {
+        $query = $this->db->prepare('SELECT COUNT(`reaction`) FROM `reactions` WHERE `post_id` = :post_id AND `reaction` = 0');
+        $query->execute([
+            ':post_id' => $postId
+        ]);
+
+        $data = $query->fetch();
+
+        return $data;
+    }
+
+    public function LikeCount(int $postId) :array
+    {
+        $query = $this->db->prepare('SELECT COUNT(`reaction`) FROM `reactions` WHERE `post_id` = :post_id AND `reaction` = 1');
+        $query->execute([
+            ':post_id' => $postId
+        ]);
+
+        $data = $query->fetch();
+
+        return $data;
+    }
+
+
 
 }
 
