@@ -36,6 +36,9 @@ if (isset($_POST['username'])) {
     } else {
         $usersModel->addUser($inputtedUsername, $inputtedEmail, $inputtedPassword);
         $users = $usersModel->selectUser($inputtedEmail);
+
+        $_SESSION['userid'] = $users->id;
+        $_SESSION['username'] = $users->username;
         $session = new SessionHandles();
         $session->LoginUser($users);
         header('Location: index.php');

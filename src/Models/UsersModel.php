@@ -36,7 +36,7 @@ class UsersModel
         $query->execute([
             ':username' => $inputtedUsername,
             ':emailAddress' => $inputtedEmail,
-            ':password' => $inputtedPassword,
+            ':password' => $inputtedPassword
         ]);
     }
 
