@@ -38,7 +38,7 @@ $singlePostDetails = $postModel->getSinglePostById($_GET['id']);
         <p class="text-2xl mb-10"><?php echo $singlePostDetails->dateTime; ?> - By <?php echo $singlePostDetails->authorName; ?></p>
         <p><?php echo $singlePostDetails->content; ?></p>
         <div class="flex justify-center gap-5">
-            <a class="px-3 py-2 mt-4 text-lg bg-green-300 hover:bg-green-400 hover:text-white transition inline-block rounded-sm" href="#">Like</a>
+            <a class="px-3 py-2 mt-4 text-lg bg-green-300 hover:bg-green-400 hover:text-white transition inline-block rounded-sm" href="Like.php">Like</a>
             <a class="px-3 py-2 mt-4 text-lg bg-red-300 hover:bg-red-400 hover:text-white transition inline-block rounded-sm" href="#">Dislike</a>
         </div>
         <div class="flex justify-center">
