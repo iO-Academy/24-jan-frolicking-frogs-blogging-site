@@ -30,7 +30,7 @@ class UsersModel
 
     }
 
-    public function addUser(string $inputtedUsername, EmailAddress $inputtedEmail, Password $inputtedPassword)
+    public function addUser(string $inputtedUsername, EmailAddress $inputtedEmail, Password $inputtedPassword): void
     {
         $query = $this->db->prepare("INSERT INTO `users` (`user-name`, `email-address`, `password`) VALUES (:username, :emailAddress, :password);");
         $query->execute([
@@ -40,7 +40,7 @@ class UsersModel
         ]);
     }
 
-    public function checkUser(string $inputtedUsername)
+    public function checkUser(string $inputtedUsername): mixed
     {
 
         $query = $this->db->prepare('SELECT `id`, `user-name`, `email-address`, `password` FROM `users` WHERE `user-name` = :inputtedUsername');

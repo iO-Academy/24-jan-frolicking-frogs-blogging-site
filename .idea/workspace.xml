@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <list default="true" id="f613e056-e5dc-434d-bafb-f55d1ec64572" name="Changes" comment="">
 <<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
@@ -35,6 +36,29 @@
 =======
     <list default="true" id="f613e056-e5dc-434d-bafb-f55d1ec64572" name="Changes" comment="" />
 >>>>>>> story4
+=======
+    <list default="true" id="f613e056-e5dc-434d-bafb-f55d1ec64572" name="Changes" comment="" />
+=======
+    <list default="true" id="f613e056-e5dc-434d-bafb-f55d1ec64572" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SessionHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/24-jan-frolicking-frogs-blogging-site.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entities/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interfaces/VerifyUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interfaces/VerifyUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/UsersModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/UsersModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PostsViewHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/PostsViewHelper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/PostViewHelperTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/PostViewHelperTest.php" afterDir="false" />
+    </list>
+>>>>>>> S2S3
+>>>>>>> f2c243afcbb543caa8e1cdedc13bcc27f403284f
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,6 +95,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "git-widget-placeholder": "S4T1",
 =======
     "git-widget-placeholder": "story2",
@@ -86,6 +111,12 @@
     "git-widget-placeholder": "S3T6",
 >>>>>>> b5d6a074fd8ee2acf213c477dcd683418a5ee845
 >>>>>>> 33a6e1290dab2761093908a2f195bae796d5859c
+=======
+    "git-widget-placeholder": "story3",
+=======
+    "git-widget-placeholder": "Merging S2S3",
+>>>>>>> S2S3
+>>>>>>> f2c243afcbb543caa8e1cdedc13bcc27f403284f
     "last_opened_file_path": "/Users/victoriamccusker/sites/academyServer/html/24-jan-frolicking-frogs-blogging-site",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -113,17 +144,21 @@
       <workItem from="1709642656443" duration="917000" />
       <workItem from="1709645807002" duration="1295000" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       <workItem from="1709664103952" duration="2000" />
       <workItem from="1709715898397" duration="33000" />
       <workItem from="1709715948917" duration="724000" />
 >>>>>>> 8b9b9304316b87d2aeb60ca05af372b538198341
+=======
+>>>>>>> f2c243afcbb543caa8e1cdedc13bcc27f403284f
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+<<<<<<< HEAD
 <<<<<<< HEAD
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -136,6 +171,8 @@
       </breakpoints>
     </breakpoint-manager>
 =======
+=======
+>>>>>>> f2c243afcbb543caa8e1cdedc13bcc27f403284f
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -146,6 +183,9 @@
         </entry>
       </map>
     </option>
+<<<<<<< HEAD
 >>>>>>> c806a07202478bd4cb1da1ff16606ffa68e9002b
+=======
+>>>>>>> f2c243afcbb543caa8e1cdedc13bcc27f403284f
   </component>
 </project>

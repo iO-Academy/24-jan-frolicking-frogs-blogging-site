@@ -4,9 +4,17 @@ require_once 'connectToDB.php';
 require_once 'src/Models/UsersModel.php';
 require_once 'emailAddress.php';
 require_once 'password.php';
+require_once 'SessionHandler.php';
 
 session_start();
 
+$session = new SessionHandles();
+
+if ($session->checkUserLoggedIn()) {
+header('Location: index.php');
+}
+
+$errorMessage = '';
 if (isset($_POST['username'])) {
 
     $inputtedUsername = $_POST['username'];
@@ -20,15 +28,19 @@ if (isset($_POST['username'])) {
     $user = $usersModel->checkUser($inputtedUsername);
 
     if (!empty($user)) {
-        echo 'This username is taken';
+        $errorMessage = 'This username is taken';
 
     } else if ($inputtedPassword == '') {
-        echo '';
+        $errorMessage = 'Password should be at least 8 characters in length
+        and should include at least one upper case letter and one number';
     } else {
         $usersModel->addUser($inputtedUsername, $inputtedEmail, $inputtedPassword);
         $users = $usersModel->selectUser($inputtedEmail);
+
         $_SESSION['userid'] = $users->id;
         $_SESSION['username'] = $users->username;
+        $session = new SessionHandles();
+        $session->LoginUser($users);
         header('Location: index.php');
     }
 }
@@ -64,6 +76,8 @@ if (isset($_POST['username'])) {
         <label class="mb-3 block" for="password">Password:</label>
         <input class="w-full px-3 py-2 text-lg" type="password" id="password" name="password" />
     </div>
+
+    <?php echo $errorMessage ?>
 
     <input class="px-3 py-2 mt-4 text-lg bg-indigo-400 hover:bg-indigo-700 hover:text-white transition inline-block rounded-sm" type="submit" value="Register" />
 </form>

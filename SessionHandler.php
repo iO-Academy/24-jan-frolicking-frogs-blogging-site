@@ -3,16 +3,14 @@
 class SessionHandles
 {
 
-    function LoginUser($users): void
+    public function LoginUser(User $users): void
     {
         $_SESSION['userid'] = $users->id;
         $_SESSION['username'] = $users->username;
     }
 
-    function checkUserLoggedIn()
+    public function checkUserLoggedIn(): bool
     {
-        if (isset($_SESSION['userid'])) {
-            return true;
-        } return false;
+        return isset($_SESSION['userid']);
     }
 }

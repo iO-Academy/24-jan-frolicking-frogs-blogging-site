@@ -6,40 +6,39 @@ require_once 'SessionHandler.php';
 
 session_start();
 
-function verifyLogin(): void
-{
-    $session = new SessionHandles();
-    if ($session->checkUserLoggedIn()) {
-        header('Location: index.php'); }
+$session = new SessionHandles();
+if ($session->checkUserLoggedIn()) {
+    header('Location: index.php');
+}
 
+$errorMessage = '';
 
-    if (isset($_POST['email'])) {
+if (isset($_POST['email'], $_POST['password'])) {
 
-        $inputtedEmail = $_POST['email'];
-        $inputtedPassword = $_POST['password'];
+    $inputtedEmail = $_POST['email'];
+    $inputtedPassword = $_POST['password'];
 
-        $db = connectToDB();
-        $usersModel = new UsersModel($db);
+    $db = connectToDB();
+    $usersModel = new UsersModel($db);
 
-        $users = $usersModel->selectUser($inputtedEmail);
-        if ($users === null) {
-            echo 'User does not exist';
+    $users = $usersModel->selectUser($inputtedEmail);
+    if ($users === null) {
+        $errorMessage = '<p>User does not exist<p>';
+
+    } else {
+        $storedPassword = $users->password;
+        $storedEmail = $users->emailAddress;
+
+        if ((password_verify($inputtedPassword, $storedPassword)) && ($inputtedEmail == $storedEmail)) {
+            $session = new SessionHandles();
+            $session->LoginUser($users);
+            header('Location: index.php');
         } else {
-            $storedPassword = $users->password;
-            $storedEmail = $users->emailAddress;
-
-            if ((password_verify($inputtedPassword, $storedPassword)) && ($inputtedEmail == $storedEmail)) {
-                $session = new SessionHandles();
-                $session->LoginUser($users);
-                header('Location: index.php');
-            } else {
-                echo 'Sorry, your username or password is incorrect';
-            }
+            $errorMessage = '<p> Sorry, your email or password is incorrect<p>';
         }
     }
 }
 
-verifyLogin();
 
 ?>
 <!DOCTYPE html>
@@ -69,6 +68,7 @@ verifyLogin();
     </div>
 
     <input class="px-3 py-2 mt-4 text-lg bg-indigo-400 hover:bg-indigo-700 hover:text-white transition inline-block rounded-sm" type="submit" value="Login" />
+    <?php echo $errorMessage ?>
 </form>
 
 <div class="text-center"></div>
