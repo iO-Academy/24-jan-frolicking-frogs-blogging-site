@@ -1,5 +1,4 @@
 <?php
-
 require_once 'connectToDB.php';
 require_once 'src/Models/PostModel.php';
 
@@ -10,15 +9,13 @@ session_start();
 
 $singlePostDetails = $postModel->getSinglePostById($_GET['id']);
 
-//var_dump($singlePostDetails);
-
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Blog - Example Title</title>
+    <title>Blog - <?php echo $singlePostDetails->title; ?></title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="selection:bg-teal-200">

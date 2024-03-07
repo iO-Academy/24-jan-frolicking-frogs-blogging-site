@@ -25,8 +25,4 @@ class PostsViewHelper
         return $postString;
     }
 
-    public function displaySinglePost()
-    {
-
-    }
 }
