@@ -10,7 +10,6 @@ session_start();
 $db = connectToDB();
 $postModel = new PostModel($db);
 $commentModel = new CommentModel($db);
-$comments = $commentModel->getAllComments($_GET['id']);
 $commentsViewHelper = new \src\CommentsViewHelper();
 $errorMessage = '';
 $successMessage = '';
@@ -51,6 +50,8 @@ if (isset($_POST['submit']))
         $inputtedComment = '';
     }
 }
+
+$comments = $commentModel->getAllComments($_GET['id']);
 ?>
 
 <!DOCTYPE html>
