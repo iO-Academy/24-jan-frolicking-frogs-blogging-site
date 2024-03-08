@@ -25,10 +25,10 @@ if (isset($_POST['username'])) {
 
     $usersModel = new UsersModel($db);
 
-    $user = $usersModel->checkUser($inputtedEmail);
+    $user = $usersModel->checkUser($inputtedUsername, $inputtedEmail);
 
     if (!empty($user)) {
-        $errorMessage = 'This username is taken';
+        $errorMessage = 'This username or email is taken';
 
     } else if ($inputtedPassword == '') {
         $errorMessage = 'Password should be at least 8 characters in length

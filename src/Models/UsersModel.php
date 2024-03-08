@@ -40,12 +40,13 @@ class UsersModel
         ]);
     }
 
-    public function checkUser(string $inputtedUsername): mixed
+    public function checkUser(string $inputtedUsername, EmailAddress $inputtedEmail): mixed
     {
 
-        $query = $this->db->prepare('SELECT `id`, `user-name`, `email-address`, `password` FROM `users` WHERE `user-name` = :inputtedUsername');
+        $query = $this->db->prepare('SELECT `id`, `user-name`, `email-address`, `password` FROM `users` WHERE `user-name` = :inputtedUsername OR `email-address` = :inputtedEmail;');
         $query->execute([
-            ':inputtedUsername' => $inputtedUsername
+            ':inputtedUsername' => $inputtedUsername,
+            ':inputtedEmail' => $inputtedEmail
         ]);
 
         $data = $query->fetch();
