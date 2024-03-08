@@ -1,16 +1,24 @@
 <?php
 require_once 'connectToDB.php';
 require_once 'src/Models/PostModel.php';
-
-$db = connectToDB();
-$postModel = new PostModel($db);
+require_once 'SessionHandler.php';
+require_once 'src/Models/CommentModel.php';
+require_once 'src/CommentsViewHelper.php';
 
 session_start();
+$db = connectToDB();
+$postModel = new PostModel($db);
+$commentModel = new CommentModel($db);
+$comments = $commentModel->getAllComments($_GET['id']);
+$commentsViewHelper = new \src\CommentsViewHelper();
+$errorMessage = '';
+$successMessage = '';
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
     $singlePostDetails = $postModel->getSinglePostById($id);
+    $formattedDate = date('d/m/Y', strtotime($singlePostDetails->dateTime));
 
     if (!$singlePostDetails) {
         header('Location: index.php');
@@ -19,7 +27,25 @@ if (isset($_GET['id'])) {
     header('Location: index.php');
 }
 
-$formattedDate = date('d/m/Y', strtotime($singlePostDetails->dateTime));
+
+if (isset($_POST['submit']))
+{
+
+    $inputtedComment = strip_tags($_POST['comment']);
+    $currentUserId = $_SESSION['userid'];
+    $currentPostId = $_GET['id'];
+
+    $db = connectToDb();
+    $commentModel = new CommentModel($db);
+
+    if(strlen($inputtedComment) < 10 || strlen($inputtedComment) > 200) {
+        $errorMessage = 'Comment must be between 10 to 200 characters';
+    } else {
+        $commentModel->addComment($inputtedComment, $currentUserId, $currentPostId);
+        $successMessage = 'Congratulations! Your comment has been added to this blog post! Thanks for contributing to our network!';
+        $inputtedComment = '';
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -32,10 +58,17 @@ $formattedDate = date('d/m/Y', strtotime($singlePostDetails->dateTime));
 <body class="selection:bg-teal-200">
 <nav class="flex justify-between items-center py-5 px-4 mb-10 border-b border-solid">
     <a href="index.php"><h1 class="text-5xl">Blog</h1></a>
-    <div class="flex gap-5">
+    <?php $session = new SessionHandles();
+    if (!$session->checkUserLoggedIn()) {
+        echo '<div class="flex gap-5">
+        <a href="login.php">Login</a>
+        <a href="registration.php">Register</a>
+        <a href="login.php">Create Post</a>
+        </div>'; } else {
+        echo '<div class="flex gap-5">
         <a href="addPost.php">Create Post</a>
         <a href="logout.php">Logout</a>
-    </div>
+        </div>'; }?>
 </nav>
 
 <section class="container md:w-1/2 mx-auto">
@@ -49,6 +82,29 @@ $formattedDate = date('d/m/Y', strtotime($singlePostDetails->dateTime));
             <a class="px-3 py-2 mt-4 text-lg bg-indigo-400 hover:bg-indigo-700 hover:text-white transition inline-block rounded-sm" href="index.php">View all posts</a>
         </div>
     </article>
+</section>
+
+<?php
+$session = new SessionHandles();
+if ($session->checkUserLoggedIn()) {
+?>
+<section class="container md:w-1/2 mx-auto mt-5">
+    <form method="post" class="p-8 border border-solid rounded-md bg-slate-200">
+        <div class="mb-5">
+            <label class="mb-3 block" for="content">Comment:</label>
+            <textarea class="w-full" id="content" rows="5" name="comment"><?php echo (!empty($errorMessage)) ? ($_POST['comment']) : ''; ?></textarea>
+            <?php if (!empty($errorMessage)) : ?>
+                <p class="text-red-500"><?php echo $errorMessage; ?></p>
+            <?php endif; ?>    <?php if (!empty($successMessage)) : ?>
+                <p class="text-green-500"><?php echo $successMessage; ?></p>
+            <?php endif; ?>
+        </div>
+        <input class="px-3 py-2 mt-4 text-lg bg-indigo-400 hover:bg-indigo-700 hover:text-white transition inline-block rounded-sm" name="submit" type="submit" value="Post Comment" />
+    </form>
+</section>
+    <?php } ?>
+<section class="container md:w-1/2 mx-auto mt-5 mb-10">
+    <?php echo $commentsViewHelper->displayAllComments($comments) ?>
 </section>
 
 </body>
