@@ -11,13 +11,11 @@ $successMessage = '';
 
 if (isset($_POST['submit']))
     {
-
     $inputtedTitle = strip_tags($_POST['title']);
     $inputtedContent = strip_tags($_POST['content']);
     $currentUserId = $_SESSION['userid'];
 
     $db = connectToDb();
-
     $postsModel = new PostModel($db);
 
         if(strlen($inputtedTitle) > 30) {
@@ -30,7 +28,6 @@ if (isset($_POST['submit']))
             $inputtedTitle = '';
             $inputtedContent = '';
         }
-
 }
 ?>
 <!DOCTYPE html>
