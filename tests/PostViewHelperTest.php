@@ -21,7 +21,6 @@ class PostViewHelperTest extends TestCase {
 
         $subject = new \src\PostsViewHelper();
         $actual = $subject->displayAllPosts([$post1]);
-        $actual = $subject->displayAllPosts([$post1]);
         $this->assertEquals($expecting, $actual);
     }
 }
