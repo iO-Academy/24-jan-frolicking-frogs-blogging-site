@@ -6,6 +6,40 @@
   <component name="ChangeListManager">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    <list default="true" id="f613e056-e5dc-434d-bafb-f55d1ec64572" name="Changes" comment="">
+<<<<<<< HEAD
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 33a6e1290dab2761093908a2f195bae796d5859c
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/password.php" beforeDir="false" afterPath="$PROJECT_DIR$/password.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/registration.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entities/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interfaces/VerifyUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interfaces/VerifyUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/UsersModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/UsersModel.php" afterDir="false" />
+>>>>>>> c806a07202478bd4cb1da1ff16606ffa68e9002b
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> b5d6a074fd8ee2acf213c477dcd683418a5ee845
+>>>>>>> 33a6e1290dab2761093908a2f195bae796d5859c
+    </list>
+=======
+    <list default="true" id="f613e056-e5dc-434d-bafb-f55d1ec64572" name="Changes" comment="" />
+>>>>>>> 8b9b9304316b87d2aeb60ca05af372b538198341
+=======
+    <list default="true" id="f613e056-e5dc-434d-bafb-f55d1ec64572" name="Changes" comment="" />
+>>>>>>> story4
+=======
+>>>>>>> story6
     <list default="true" id="f613e056-e5dc-434d-bafb-f55d1ec64572" name="Changes" comment="" />
 =======
     <list default="true" id="f613e056-e5dc-434d-bafb-f55d1ec64572" name="Changes" comment="">
@@ -27,6 +61,7 @@
       <change beforePath="$PROJECT_DIR$/tests/PostViewHelperTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/PostViewHelperTest.php" afterDir="false" />
     </list>
 >>>>>>> S2S3
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
     <list default="true" id="f613e056-e5dc-434d-bafb-f55d1ec64572" name="Changes" comment="">
@@ -59,6 +94,9 @@
     <list default="true" id="f613e056-e5dc-434d-bafb-f55d1ec64572" name="Changes" comment="" />
 >>>>>>> story4
 >>>>>>> 0893fd31e262b6750b77e7773cddffc0de92b47e
+=======
+>>>>>>> f2c243afcbb543caa8e1cdedc13bcc27f403284f
+>>>>>>> story6
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -94,10 +132,32 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+    "git-widget-placeholder": "S4T1",
+=======
+    "git-widget-placeholder": "story2",
+>>>>>>> 8b9b9304316b87d2aeb60ca05af372b538198341
+=======
+    "git-widget-placeholder": "fix",
+>>>>>>> c806a07202478bd4cb1da1ff16606ffa68e9002b
+=======
+<<<<<<< HEAD
+    "git-widget-placeholder": "story3",
+>>>>>>> story4
+=======
+    "git-widget-placeholder": "S3T6",
+>>>>>>> b5d6a074fd8ee2acf213c477dcd683418a5ee845
+>>>>>>> 33a6e1290dab2761093908a2f195bae796d5859c
+=======
+>>>>>>> story6
     "git-widget-placeholder": "story3",
 =======
     "git-widget-placeholder": "Merging S2S3",
 >>>>>>> S2S3
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -117,6 +177,9 @@
 >>>>>>> b5d6a074fd8ee2acf213c477dcd683418a5ee845
 >>>>>>> 33a6e1290dab2761093908a2f195bae796d5859c
 >>>>>>> 0893fd31e262b6750b77e7773cddffc0de92b47e
+=======
+>>>>>>> f2c243afcbb543caa8e1cdedc13bcc27f403284f
+>>>>>>> story6
     "last_opened_file_path": "/Users/victoriamccusker/sites/academyServer/html/24-jan-frolicking-frogs-blogging-site",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -144,14 +207,22 @@
       <workItem from="1709642656443" duration="917000" />
       <workItem from="1709645807002" duration="1295000" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> story6
 <<<<<<< HEAD
 =======
       <workItem from="1709664103952" duration="2000" />
       <workItem from="1709715898397" duration="33000" />
       <workItem from="1709715948917" duration="724000" />
 >>>>>>> 8b9b9304316b87d2aeb60ca05af372b538198341
+<<<<<<< HEAD
 >>>>>>> 0893fd31e262b6750b77e7773cddffc0de92b47e
+=======
+=======
+>>>>>>> f2c243afcbb543caa8e1cdedc13bcc27f403284f
+>>>>>>> story6
     </task>
     <servers />
   </component>
@@ -159,7 +230,10 @@
     <option name="version" value="3" />
   </component>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> story6
 <<<<<<< HEAD
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -172,7 +246,12 @@
       </breakpoints>
     </breakpoint-manager>
 =======
+<<<<<<< HEAD
 >>>>>>> 0893fd31e262b6750b77e7773cddffc0de92b47e
+=======
+=======
+>>>>>>> f2c243afcbb543caa8e1cdedc13bcc27f403284f
+>>>>>>> story6
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -184,8 +263,14 @@
       </map>
     </option>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> c806a07202478bd4cb1da1ff16606ffa68e9002b
 >>>>>>> 0893fd31e262b6750b77e7773cddffc0de92b47e
+=======
+>>>>>>> c806a07202478bd4cb1da1ff16606ffa68e9002b
+=======
+>>>>>>> f2c243afcbb543caa8e1cdedc13bcc27f403284f
+>>>>>>> story6
   </component>
 </project>
