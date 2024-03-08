@@ -25,14 +25,14 @@ class PostsViewHelper
             $formattedDate = date('d/m/Y', strtotime($post->dateTime));
 
             $controversial = '';
-            if ($dislikes['COUNT(`reaction`)'] > ($likes['COUNT(`reaction`)'] * 1.5)) {
+            if ($dislikes['DislikeCount'] > ($likes['LikeCount'] * 1.5)) {
                 $controversial = '<span class="px-3 py-2 bg bg-rose-600 inline-block mb-4 rounded-sm">Controversial</span>';
             }
             $postString .= "<article class='p-8 border border-solid rounded-md'>
                  {$controversial}
                  <div class='flex justify-between items-center flex-col md:flex-row mb-4'>
                 <h2 class='text-4xl'> {$post->title} </h2>
-                <span class='text-xl'> {$likes['COUNT(`reaction`)']} likes - {$dislikes['COUNT(`reaction`)']} dislikes </span>
+                <span class='text-xl'> {$likes['LikeCount']} likes - {$dislikes['DislikeCount']} dislikes </span>
                 </div>
                 <p class='text-2xl mb-2'> {$formattedDate} - {$post->authorName} </p>";
             $postString .= "<p>" . mb_strimwidth($post->content, 0, 100, '...') . "</p>
