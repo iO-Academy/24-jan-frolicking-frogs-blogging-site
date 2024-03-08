@@ -15,8 +15,12 @@ if (!$session->checkUserLoggedIn()) {
     $postModel = new PostModel($db);
     $userId = $_SESSION['userid'];
     $data = $postModel->hasDisliked($postId, $userId);
+    $like = $postModel->hasLiked($postId, $userId);
     header("Location: singlePost.php?id={$_GET['id']}");
-    if (!$data) {
+    if (!$data && !$like) {
+        $postModel->dislikePost($postId, $userId);
+    } else if ($like) {
+        $postModel->removeLike($postId, $userId);
         $postModel->dislikePost($postId, $userId);
     }
 }

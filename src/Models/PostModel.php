@@ -134,5 +134,27 @@ class PostModel {
         return $data;
     }
 
+    public function removeLike(int $postId, int $userId) :void
+    {
+        $query = $this->db->prepare('UPDATE `reactions` SET `reaction` = null WHERE `reaction` = 1 AND `user_id` = :userId AND `post_id` = :postId;');
+        if ($userId > 0) {
+            $query->execute([
+                ':userId' => $userId,
+                ':postId' => $postId,
+            ]);
+        }
+    }
+
+    public function removeDislike(int $postId, int $userId) :void
+    {
+        $query = $this->db->prepare('UPDATE `reactions` SET `reaction` = null WHERE `reaction` = 0 AND `user_id` = :userId AND `post_id` = :postId;');
+        if ($userId > 0) {
+            $query->execute([
+                ':userId' => $userId,
+                ':postId' => $postId,
+            ]);
+        }
+    }
+
 }
 
