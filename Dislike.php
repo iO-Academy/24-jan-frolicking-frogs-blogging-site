@@ -11,12 +11,12 @@ if (!$session->checkUserLoggedIn()) {
     header('Location: login.php');
 } else {
     $postId = $_GET['id'];
-    header("Location: singlePost.php?id={$_GET['id']}");
     $db = connectToDB();
     $postModel = new PostModel($db);
     $userId = $_SESSION['userid'];
-    $data = $postModel->HasDisliked($postId, $userId);
+    $data = $postModel->hasDisliked($postId, $userId);
+    header("Location: singlePost.php?id={$_GET['id']}");
     if (!$data) {
-        $postModel->DislikePost($postId, $userId);
+        $postModel->dislikePost($postId, $userId);
     }
 }

@@ -15,8 +15,8 @@ $errorMessage = '';
 $successMessage = '';
 $postId = $_GET['id'];
 $singlePostDetails = $postModel->getSinglePostById($postId);
-$dislikes = $postModel->DislikeCount($postId);
-$likes = $postModel->LikeCount($postId);
+$dislikes = $postModel->dislikeCount($postId);
+$likes = $postModel->likeCount($postId);
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];

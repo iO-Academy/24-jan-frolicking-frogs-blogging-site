@@ -19,8 +19,8 @@ class PostsViewHelper
         foreach ($posts as $post) {
 
             $postId = $post->id;
-            $dislikes = $postModel->DislikeCount($postId);
-            $likes = $postModel->LikeCount($postId);
+            $dislikes = $postModel->dislikeCount($postId);
+            $likes = $postModel->likeCount($postId);
             $formattedDate = date('d/m/Y', strtotime($post->dateTime));
 
             $postString .= "<article class='p-8 border border-solid rounded-md'>
