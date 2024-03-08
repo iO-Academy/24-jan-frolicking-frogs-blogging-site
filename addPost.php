@@ -10,7 +10,7 @@ $errorMessage = '';
 $successMessage = '';
 
 if (isset($_POST['submit']))
-    {
+{
     $inputtedTitle = strip_tags($_POST['title']);
     $inputtedContent = strip_tags($_POST['content']);
     $currentUserId = $_SESSION['userid'];
@@ -18,16 +18,16 @@ if (isset($_POST['submit']))
     $db = connectToDb();
     $postsModel = new PostModel($db);
 
-        if(strlen($inputtedTitle) > 30) {
-            $errorMessage = 'Title should be less than 30 characters in length.';
-        } elseif(strlen($inputtedContent) < 50 || strlen($inputtedContent) > 1000) {
-            $errorMessage = 'Content must have between 50 to 1000 characters';
-        } else {
-            $postsModel->addPost($inputtedTitle, $inputtedContent, $currentUserId);
-            $successMessage = 'Congratulations! Your post has been added to our blog! Thanks for contributing to our network!';
-            $inputtedTitle = '';
-            $inputtedContent = '';
-        }
+    if(strlen($inputtedTitle) > 30) {
+        $errorMessage = 'Title should be less than 30 characters in length.';
+    } elseif(strlen($inputtedContent) < 50 || strlen($inputtedContent) > 1000) {
+        $errorMessage = 'Content must have between 50 to 1000 characters';
+    } else {
+        $postsModel->addPost($inputtedTitle, $inputtedContent, $currentUserId);
+        $successMessage = 'Congratulations! Your post has been added to our blog! Thanks for contributing to our network!';
+        $inputtedTitle = '';
+        $inputtedContent = '';
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -68,9 +68,9 @@ if (isset($_POST['submit']))
         <textarea class="w-full" name="content" id="content" rows="9" ><?php echo (!empty($errorMessage)) ? ($_POST['content']) : ''; ?></textarea>
     </div>
     <?php if (!empty($errorMessage)) : ?>
-    <p class="text-red-500"><?php echo $errorMessage; ?></p>
+        <p class="text-red-500"><?php echo $errorMessage; ?></p>
     <?php endif; ?>    <?php if (!empty($successMessage)) : ?>
-    <p class="text-green-500"><?php echo $successMessage; ?></p>
+        <p class="text-green-500"><?php echo $successMessage; ?></p>
     <?php endif; ?>
     <input class="px-3 py-2 mt-4 text-lg bg-indigo-400 hover:bg-indigo-700 hover:text-white transition inline-block rounded-sm" name="submit" type="submit" value="Create Post" />
 </form>

@@ -13,7 +13,7 @@ class PostModel {
     public function getAllPosts()
     {
         $query = $this->db->prepare('SELECT `posts`.`id`,`title`, `posts`.`content`, `posts`.`date-time`, `posts`.`user-id`, `users`.`user-name` 
-FROM `posts` INNER JOIN `users` ON `posts`.`user-id` = `users`.`id` ORDER BY `date-time` DESC;');
+        FROM `posts` INNER JOIN `users` ON `posts`.`user-id` = `users`.`id` ORDER BY `date-time` DESC;');
         $query->execute();
         $data = $query->fetchAll();
 
@@ -28,7 +28,8 @@ FROM `posts` INNER JOIN `users` ON `posts`.`user-id` = `users`.`id` ORDER BY `da
         }
         return $posts;
     }
-    public function addPost(string $inputtedTitle, string $inputtedContent, int $userId): void
+
+    public function addPost(string $inputtedTitle, string $inputtedContent, int $userId)
     {
 
         $query = $this->db->prepare("INSERT INTO `posts` (`title`, `content`, `date-time`, `user-id`) VALUES (:title, :content, CURRENT_TIMESTAMP(), :userId);");
@@ -43,7 +44,7 @@ FROM `posts` INNER JOIN `users` ON `posts`.`user-id` = `users`.`id` ORDER BY `da
     public function getSinglePostById(string $id)
     {
         $query = $this->db->prepare('SELECT `posts`.`id`,`title`, `posts`.`content`, `posts`.`date-time`, `posts`.`user-id`, `users`.`user-name` 
-FROM `posts` INNER JOIN `users` ON `posts`.`user-id` = `users`.`id` WHERE `posts`.`id` = :id;');
+        FROM `posts` INNER JOIN `users` ON `posts`.`user-id` = `users`.`id` WHERE `posts`.`id` = :id;');
         $query->execute([
             ':id' => $id
         ]);
@@ -60,4 +61,78 @@ FROM `posts` INNER JOIN `users` ON `posts`.`user-id` = `users`.`id` WHERE `posts
         return new Post($data['id'], $data['title'], $data['user-name'], $data['content'], $data['date-time']);
     }
 
+    public function likePost(int $postId, int $userId) :void
+    {
+            $query = $this->db->prepare('INSERT INTO `reactions` (`user_id`, `post_id`, `reaction`) VALUES (:userId, :postId, :reaction)');
+            if ($userId > 0) {
+                $query->execute([
+                    ':userId' => $userId,
+                    ':postId' => $postId,
+                    ':reaction' => 1,
+                ]);
+            }
+    }
+
+    public function dislikePost(int $postId, int $userId) :void
+    {
+            $query = $this->db->prepare('INSERT INTO `reactions` (`user_id`, `post_id`, `reaction`) VALUES (:userId, :postId, :reaction)');
+            if ($userId > 0) {
+                $query->execute([
+                    ':userId' => $userId,
+                    ':postId' => $postId,
+                    ':reaction' => 0,
+                ]);
+            }
+    }
+
+    public function hasLiked(int $postId, int $userId) :mixed
+    {
+        $query = $this->db->prepare('SELECT `user_id` FROM `reactions` WHERE `post_id` = :post_id AND `user_id` = :user_id AND `reaction` = 1');
+        $query->execute([
+            ':post_id' => $postId,
+            ':user_id' => $userId
+            ]);
+
+        $data = $query->fetch();
+
+        return $data;
+    }
+
+    public function hasDisliked(int $postId, int $userId) :mixed
+    {
+        $query = $this->db->prepare('SELECT `user_id` FROM `reactions` WHERE `post_id` = :post_id AND `user_id` = :user_id AND `reaction` = 0');
+        $query->execute([
+            ':post_id' => $postId,
+            ':user_id' => $userId
+        ]);
+
+        $data = $query->fetch();
+
+        return $data;
+    }
+    public function dislikeCount(int $postId) :array
+    {
+        $query = $this->db->prepare('SELECT COUNT(`reaction`) FROM `reactions` WHERE `post_id` = :post_id AND `reaction` = 0');
+        $query->execute([
+            ':post_id' => $postId
+        ]);
+
+        $data = $query->fetch();
+
+        return $data;
+    }
+
+    public function likeCount(int $postId) :array
+    {
+        $query = $this->db->prepare('SELECT COUNT(`reaction`) FROM `reactions` WHERE `post_id` = :post_id AND `reaction` = 1');
+        $query->execute([
+            ':post_id' => $postId
+        ]);
+
+        $data = $query->fetch();
+
+        return $data;
+    }
+
 }
+

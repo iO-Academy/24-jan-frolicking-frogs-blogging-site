@@ -25,7 +25,7 @@ if (isset($_POST['username'])) {
 
     $usersModel = new UsersModel($db);
 
-    $user = $usersModel->checkUser($inputtedUsername);
+    $user = $usersModel->checkUser($inputtedEmail);
 
     if (!empty($user)) {
         $errorMessage = 'This username is taken';

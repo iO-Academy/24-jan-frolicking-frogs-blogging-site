@@ -12,6 +12,7 @@ class PostViewHelperTest extends TestCase {
         $expecting = "<article class='p-8 border border-solid rounded-md'>
                  <div class='flex justify-between items-center flex-col md:flex-row mb-4'>
                 <h2 class='text-4xl'> Test </h2>
+                <span class='text-xl'> 0 likes - 0 dislikes </span>
                 </div>
                 <p class='text-2xl mb-2'> 05/03/2024 - Test </p><p>Test</p>
             <div class='flex justify-center'>
