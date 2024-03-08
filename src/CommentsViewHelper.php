@@ -6,7 +6,7 @@ require_once 'src/Models/CommentModel.php';
 
 class CommentsViewHelper
 {
-    public function displayAllComments(array $comments)
+    public function displayAllComments(array $comments): string
     {
         $CommentString = '';
         foreach ($comments as $comment) {

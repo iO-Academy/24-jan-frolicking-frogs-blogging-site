@@ -9,7 +9,7 @@ class CommentModel {
         $this->db = $db;
     }
 
-    public function getAllComments(int $id)
+    public function getAllComments(int $id): array
     {
         $query = $this->db->prepare('SELECT `comments`.`id`,`comments`.`content`, `comments`.`date`, `comments`.`user-id`,`comments`.`post-id`,`users`.`user-name`
 FROM `comments` INNER JOIN `users` ON `comments`.`user-id` = `users`.`id` WHERE `comments`.`post-id`= :id ORDER BY `date` DESC;');

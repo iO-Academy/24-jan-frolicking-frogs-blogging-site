@@ -106,6 +106,5 @@ if ($session->checkUserLoggedIn()) {
 <section class="container md:w-1/2 mx-auto mt-5 mb-10">
     <?php echo $commentsViewHelper->displayAllComments($comments) ?>
 </section>
-
 </body>
 </html>
