@@ -28,7 +28,6 @@ class PostsViewHelper
             if ($dislikes['COUNT(`reaction`)'] > ($likes['COUNT(`reaction`)'] * 1.5)) {
                 $controversial = '<span class="px-3 py-2 bg bg-rose-600 inline-block mb-4 rounded-sm">Controversial</span>';
             }
-
             $postString .= "<article class='p-8 border border-solid rounded-md'>
                  {$controversial}
                  <div class='flex justify-between items-center flex-col md:flex-row mb-4'>

@@ -10,6 +10,7 @@ class PostViewHelperTest extends TestCase {
     {
         $post1 = new Post(1, 'Test', 'Test', 'Test', '2024-03-05 12:00:00');;
         $expecting = "<article class='p-8 border border-solid rounded-md'>
+                 
                  <div class='flex justify-between items-center flex-col md:flex-row mb-4'>
                 <h2 class='text-4xl'> Test </h2>
                 <span class='text-xl'> 0 likes - 0 dislikes </span>
@@ -19,7 +20,6 @@ class PostViewHelperTest extends TestCase {
             <a class='px-3 py-2 mt-4 text-lg bg-indigo-400 hover:bg-indigo-700 hover:text-white transition inline-block rounded-sm' href='singlePost.php?id=1'>View post</a>
             </div>
             </article>";
-
         $subject = new \src\PostsViewHelper();
         $actual = $subject->displayAllPosts([$post1]);
         $this->assertEquals($expecting, $actual);
